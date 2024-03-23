@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.4.551">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <meta name="author" content="Josh M. London">
+    <meta name="dcterms.date" content="2024-03-22">
+
+    <title>Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+     <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>  
+      <meta name="citation_title" content="Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change">
+<meta name="citation_abstract" content="Ecoclogial niche partitioning allows sympatric species to co-exist in space and time while reducing direct competition for resources. In deep-diving seals (_Phocidae_) such niche partitioning can be observed as temporal differentiation in overlap, two-dimensional separation in space, three-dimensional separation in the water column, and variability in isotopic space. Here, we focus on two species of phocid seals in Bering Sea of Alaska -- ribbon seals (_Histriophoca fasciata_) and spotted seals (_Phoca largha_) -- and evidence for niche partitioning from two decades of bio-logger deployments and sampling of stable isotopes from multiple tissue types with different intergration times.
+">
+<meta name="citation_author" content="Josh M. London">
+<meta name="citation_publication_date" content="2024-03-22">
+<meta name="citation_cover_date" content="2024-03-22">
+<meta name="citation_year" content="2024">
+<meta name="citation_online_date" content="2024-03-22">
+<meta name="citation_language" content="en">
+</head>
+
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
+
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change</h1>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">Josh M. London <a href="mailto:josh.london@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-3647-5046" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Alaska Fisheries Science Center
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+                <div>
+            <div class="quarto-title-meta-heading">Published</div>
+            <div class="quarto-title-meta-contents">
+              <p class="date">March 22, 2024</p>
+            </div>
+          </div>
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+    <div>
+      <div class="abstract">
+        <div class="block-title">Abstract</div>
+        <p>Ecoclogial niche partitioning allows sympatric species to co-exist in space and time while reducing direct competition for resources. In deep-diving seals (<em>Phocidae</em>) such niche partitioning can be observed as temporal differentiation in overlap, two-dimensional separation in space, three-dimensional separation in the water column, and variability in isotopic space. Here, we focus on two species of phocid seals in Bering Sea of Alaska – ribbon seals (<em>Histriophoca fasciata</em>) and spotted seals (<em>Phoca largha</em>) – and evidence for niche partitioning from two decades of bio-logger deployments and sampling of stable isotopes from multiple tissue types with different intergration times.</p>
+      </div>
+    </div>
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
+
+       <div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RPostgres)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dbplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    ident, sql</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ctmm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ctmm'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    annotate</code></pre>
+</div>
+</div></div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+</section>
+<section id="methods" class="level1">
+<h1>Methods</h1>
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>locs_sf <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'data/locs_sf.rds'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<p>A total of 234 bio-loggers (SPLASH family, Wildlife Computers, Redmond, Washington, USA) were deployed on 110 ribbon seals and 82 spotted seals between 2005 and 2022. The deployments span all age classes with the exception of dependent pups for both species and were deployed during the months of April, May, and June. In some cases, deployments were initiated prior to molting and the bio-loggers fell off after a period of weeks to two months. Deployments initiated after molting transmitted up to 9 months.</p>
+<p>All deployments were checked for any data quality issues and inconsistent location estimates before they were run through a course speed filter to remove any locations that would have required a sustained swim speed greater than 25 km/h.</p>
+<p>Two data sets were created to separate movement in the months of April, May, and June from the rest of the year.</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>filter_tracks <span class="ot">&lt;-</span> <span class="cf">function</span>(tracks_sf) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  crs <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(tracks_sf)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> tracks_sf <span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    sf<span class="sc">::</span><span class="fu">st_transform</span>(<span class="dv">4326</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(deployid, locs_dt)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  dat_tr <span class="ot">&lt;-</span> trip<span class="sc">::</span><span class="fu">trip</span>(dat, <span class="fu">c</span>(<span class="st">"locs_dt"</span>,<span class="st">"deployid"</span>), <span class="at">correct_all =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">suppressWarnings</span>(</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    keep <span class="ot">&lt;-</span> trip<span class="sc">::</span><span class="fu">sda</span>(</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>      dat_tr,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">smax =</span> <span class="dv">25</span> <span class="co">#km/hour</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  tracks_filt <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">sda_keep =</span> keep) <span class="sc">%&gt;%</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(sda_keep) <span class="sc">%&gt;%</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(sda_keep, rank)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_transform</span>(crs)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(tracks_filt)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>locs_sf <span class="ot">&lt;-</span> locs_sf <span class="sc">|&gt;</span> </span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_tracks</span>()</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>locs_sf_spring <span class="ot">&lt;-</span> locs_sf <span class="sc">|&gt;</span> </span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(tag_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'SPLA'</span>,<span class="st">'SGPS'</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(lubridate<span class="sc">::</span><span class="fu">month</span>(locs_dt) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(deployid,locs_dt) </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>locs_sf_open_water <span class="ot">&lt;-</span> locs_sf <span class="sc">|&gt;</span> </span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(tag_type <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'SPLA'</span>,<span class="st">'SGPS'</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span>lubridate<span class="sc">::</span><span class="fu">month</span>(locs_dt) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(deployid,locs_dt) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<p>Utilization distributions were estimated for each species and each of the seasonal periods based on a continuous time movement model (R package <code>ctmm</code>). Specifically, optimally weighted auto-correlated kernel density estimates (wAKDE) were created to reflect a more honest account of space use while also mitigating sampling bias from irregular deployment lengths.</p>
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>as_telem <span class="ot">&lt;-</span> <span class="cf">function</span>(locs_sf, out_proj) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  locs_df <span class="ot">&lt;-</span> locs_sf <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    sfheaders<span class="sc">::</span><span class="fu">sf_to_df</span>(<span class="at">fill =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">individual.local.identifier =</span> deployid,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">timestamp =</span> locs_dt,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">location.long =</span> x,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">location.lat =</span> y,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">Argos.orientation =</span> error_ellipse_orientation,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">Argos.semi.minor =</span> error_semi_minor_axis,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">Argos.semi.major =</span> error_semi_major_axis,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">Argos.location.class =</span> quality</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  locs_df <span class="ot">&lt;-</span> ctmm<span class="sc">::</span><span class="fu">as.telemetry</span>(</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">object =</span> locs_df, </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">projection =</span> out_proj)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(locs_df)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pl_telem_spring <span class="ot">&lt;-</span> <span class="fu">as_telem</span>(locs_sf_spring <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                              dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">'Spotted seal'</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">out_proj =</span> <span class="st">'epsg:3571'</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>3383 ARGOS error ellipses missing. Using location class estimates from Vincent et al (2002).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2005_5966_05L0002</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in PL2005_5969_04L0021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.93 minutes in PL2005_5971_05L0017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 54 seconds in PL2006_5976_05L0245</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 6 seconds in PL2006_5990_05L0244</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in PL2007_6040_07L0019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3.75 minutes in PL2007_6042_07L0016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in PL2009_1025_09L0045</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in PL2009_2002_06L0124</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2009_2003_08L0035</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 33 seconds in PL2009_2004_08L0033</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 27 seconds in PL2009_2005_06L0126</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.33 minutes in PL2009_2006_08L0046</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 30 seconds in PL2009_2016_08L0039</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3.45 minutes in PL2009_2019_08L0050</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.72 minutes in PL2009_2020_08L0030</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4 seconds in PL2009_2033_07L0013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2009_2038_08L0053</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 7 seconds in PL2010_1002_08L0029</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 7 seconds in PL2010_1003_08L0128</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 6 seconds in PL2010_2002_08L0052</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 35 seconds in PL2010_2004_08L0044</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 6 seconds in PL2010_2005_08L0026</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2010_2021_10A0192</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1017_10A0554</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 7 seconds in PL2014_1019_10A0201</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 17 seconds in PL2014_1020_10A0195</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1027_10A0598</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1028_10A0196</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in PL2016_1001_14A0844</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2016_1003_14A0797</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 21 seconds in PL2016_1004_14A0847</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2016_1007_14A0824</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2016_1016_14A0832</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 23 seconds in PL2016_1021_14A0781</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 29 seconds in PL2016_9002_15U2975</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.85 minutes in PL2016_9003_15U2869</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2018_1002_17A0776</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3 seconds in PL2018_1009_17A0775</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2018_1016_17A0780</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2018_1022_17A0976</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 46 seconds in PL2018_1022_17U2916</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2018_1027_17A0767</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 8 seconds in PL2022_1004_19U2507</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>pl_telem_open_water <span class="ot">&lt;-</span> <span class="fu">as_telem</span>(locs_sf_open_water <span class="sc">|&gt;</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>                                  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">'Spotted seal'</span>),</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">out_proj =</span> <span class="st">'epsg:3571'</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                                )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>9474 ARGOS error ellipses missing. Using location class estimates from Vincent et al (2002).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2005_5966_05L0002</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2005_5967_05L0026</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2005_5968_05L0005</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 51 seconds in PL2005_5969_04L0021</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2005_5971_05L0017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 27 seconds in PL2006_5990_05L0244</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4 seconds in PL2007_6040_07L0019</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 50 seconds in PL2007_6042_07L0016</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_1020_09L0043</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_1025_09L0045</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 11 seconds in PL2009_2002_06L0124</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_2003_08L0035</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 7 seconds in PL2009_2004_08L0033</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2009_2005_06L0126</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_2006_08L0046</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3 seconds in PL2009_2016_08L0039</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 13 seconds in PL2009_2019_08L0050</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2009_2020_08L0030</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 5 seconds in PL2009_2033_07L0013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_2034_08L0028</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_2038_08L0053</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2009_2039_08L0040</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3 seconds in PL2010_1002_08L0029</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2010_1003_08L0128</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2010_2002_08L0052</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2010_2004_08L0044</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2010_2005_08L0026</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2010_2021_10A0192</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1017_10A0554</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1019_10A0201</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in PL2014_1020_10A0195</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2014_1027_10A0598</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in PL2014_1028_10A0196</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4.13 minutes in PL2016_9001_15U2968</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in PL2016_9002_15U2975</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in PL2016_9003_15U2869</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in PL2017_9002_16U2115</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.48 minutes in PL2017_9003_15U2972</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 8 seconds in PL2018_1002_17A0776</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 47 seconds in PL2018_1022_17U2916</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in PL2018_1027_17A0767</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>hf_telem_spring <span class="ot">&lt;-</span> <span class="fu">as_telem</span>(locs_sf_spring <span class="sc">|&gt;</span> </span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>                              dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">'Ribbon seal'</span>),</span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">out_proj =</span> <span class="st">'epsg:3571'</span></span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>                            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>1978 ARGOS error ellipses missing. Using location class estimates from Vincent et al (2002).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2005_5880_05L0003</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.55 minutes in HF2005_5882_05L0008</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in HF2005_5890_05L0011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 46 seconds in HF2005_5896_05L0015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in HF2005_5898_05L0001</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.95 minutes in HF2006_5978_05L0236</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.5 minutes in HF2006_5982_05L0238</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2006_5989_05L0237</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.47 minutes in HF2007_6048_05L0240</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 6.82 minutes in HF2007_6066_05L0243</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4.35 minutes in HF2007_6068_05L0239</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in HF2007_6075_06L0130</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 6 seconds in HF2007_6089_07L0017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.57 minutes in HF2007_6102_07L0015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 26 seconds in HF2007_6109_06A1350</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3.67 minutes in HF2007_6110_06L0131</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.52 minutes in HF2009_1009_06L0127</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 8 seconds in HF2009_1019_09L0040</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 46 seconds in HF2009_2009_08L0051</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2009_2012_09L0047</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4 minutes in HF2009_2017_09L0050</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2009_2018_09L0042</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 14 seconds in HF2009_2022_09L0044</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 18 seconds in HF2009_2029_08L0056</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.43 minutes in HF2009_2030_07L0173</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2010_1001_08L0048</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.08 minutes in HF2010_1007_06L0129</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 23 seconds in HF2010_1010_08L0036</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3.33 minutes in HF2010_1017_10A0224</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2010_2001_09L0041</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2010_2006_09A0899</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 35 seconds in HF2010_2007_08L0054</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2010_2009_08L0055</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.25 minutes in HF2010_2011_10A0249</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 3 seconds in HF2010_2015_10A0217</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 25 seconds in HF2010_2023_10A0229</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in HF2014_1001_09A0892</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 9 seconds in HF2014_1003_10A0551</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2014_1005_10A0228</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 21 seconds in HF2014_1007_10A0234</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2014_1008_10A0230</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2014_1011_10A0550</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in HF2014_1013_09A0894</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2014_1015_10A0220</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2014_1018_10A0226</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 11 seconds in HF2014_1022_13A0223</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 23 seconds in HF2014_1023_09A0896</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2014_1025_09A0888</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in HF2016_1002_14A0839</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.97 minutes in HF2016_1009_14A0860</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in HF2016_1011_14A0707</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2016_1013_14A0842</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 5 seconds in HF2016_1018_14A0801</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2016_1019_14A0862</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4 seconds in HF2022_1005_19U3070</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>hf_telem_open_water <span class="ot">&lt;-</span> <span class="fu">as_telem</span>(locs_sf_open_water <span class="sc">|&gt;</span> </span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>                                  dplyr<span class="sc">::</span><span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">'Ribbon seal'</span>),</span>
+<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a>                                <span class="at">out_proj =</span> <span class="st">'epsg:3571'</span></span>
+<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a>                                )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>4281 ARGOS error ellipses missing. Using location class estimates from Vincent et al (2002).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4.4 minutes in HF2005_5880_05L0003</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 9 seconds in HF2005_5882_05L0008</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 24 seconds in HF2005_5884_05L0009</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 46.5 minutes in HF2005_5886_05L0014</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.03 minutes in HF2005_5888_05L0010</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 27 seconds in HF2005_5890_05L0011</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.47 minutes in HF2005_5892_05L0012</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.65 minutes in HF2005_5894_05L0013</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 12 seconds in HF2005_5896_05L0015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.15 minutes in HF2005_5898_05L0001</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2006_5978_05L0236</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 44 seconds in HF2007_6048_05L0240</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.52 minutes in HF2007_6066_05L0243</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 38 seconds in HF2007_6068_05L0239</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4.35 minutes in HF2007_6075_06L0130</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2007_6089_07L0017</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2.95 minutes in HF2007_6102_07L0015</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 50 seconds in HF2007_6109_06A1350</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 27 seconds in HF2007_6110_06L0131</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2009_1009_06L0127</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 23 seconds in HF2009_1016_09L0048</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2009_1017_08L0049</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in HF2009_1018_08L0034</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2009_1019_09L0040</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 21 seconds in HF2009_1026_09L0028</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 46 seconds in HF2009_2009_08L0051</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 4 seconds in HF2009_2012_09L0047</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2009_2017_09L0050</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2009_2018_09L0042</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 43 seconds in HF2009_2022_09L0044</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 8 seconds in HF2009_2023_08L0032</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 15 seconds in HF2009_2024_06L0125</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 11 seconds in HF2009_2025_09L0051</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in HF2009_2026_08L0042</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.55 minutes in HF2009_2027_08L0031</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2009_2028_09L0030</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1.25 minutes in HF2009_2029_08L0056</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2009_2030_07L0173</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2009_2035_08L0047</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 33 seconds in HF2009_2037_08L0024</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 21 seconds in HF2009_2041_08L0045</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 45 seconds in HF2010_1010_08L0036</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 17 seconds in HF2010_1017_10A0224</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 18.8 minutes in HF2010_2001_09L0041</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 1 seconds in HF2010_2006_09A0899</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 16 minutes in HF2010_2007_08L0054</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 25 seconds in HF2010_2009_08L0055</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 17 seconds in HF2010_2015_10A0217</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 18 seconds in HF2010_2023_10A0229</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 22 seconds in HF2014_1022_13A0223</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Minimum sampling interval of 2 seconds in HF2022_1005_19U3070</code></pre>
+</div>
+</div></div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div class="cell">
+<div class="sourceCode cell-code" id="cb215"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a>GUESS <span class="ot">&lt;-</span> <span class="fu">map</span>(pl_telem_spring, ctmm.guess, <span class="at">interactive =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>  </div> <!-- /content --> 
+  
+</body></html>

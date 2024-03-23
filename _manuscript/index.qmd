@@ -1,0 +1,161 @@
+---
+title: "Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change"
+date: today
+author:
+  - name: Josh M. London
+    email: josh.london@noaa.gov
+    orcid: 0000-0002-3647-5046
+    affiliations:
+      - ref: noaa-mml
+
+affiliations:
+  - id: noaa-mml
+    name: Alaska Fisheries Science Center
+    department: National Marine Fisheries Service
+    address: 7600 Sand Point Way NE
+    city: Seattle
+    state: WA
+abstract: > 
+  Ecoclogial niche partitioning allows sympatric species to co-exist in space and
+  time while reducing direct competition for resources. In deep-diving seals
+  (_Phocidae_) such niche partitioning can be observed as temporal differentiation
+  in overlap, two-dimensional separation in space, three-dimensional separation
+  in the water column, and variability in isotopic space. Here, we focus on two
+  species of phocid seals in Bering Sea of Alaska -- ribbon seals
+  (_Histriophoca fasciata_) and spotted seals (_Phoca largha_) -- and evidence for
+  niche partitioning from two decades of bio-logger deployments and sampling of
+  stable isotopes from multiple tissue types with different intergration times.
+  
+execute:
+  include: false
+---
+
+```{r}
+library(RPostgres)
+library(dplyr)
+library(dbplyr)
+library(purrr)
+library(ggplot2)
+library(sf)
+library(ctmm)
+```
+
+# Introduction
+
+# Methods
+
+```{r}
+locs_sf <- readRDS(here::here('data/locs_sf.rds'))
+```
+
+A total of `r locs_sf |> dplyr::distinct(ptt) |> nrow()` bio-loggers (SPLASH
+family, Wildlife Computers, Redmond, Washington, USA) were deployed on
+`r locs_sf |> dplyr::filter(species == 'Ribbon seal') |> distinct(speno) |> nrow()`
+ribbon seals and 
+`r locs_sf |> dplyr::filter(species == 'Spotted seal') |> distinct(speno) |> nrow()`
+spotted seals between `r min(locs_sf$deploy_dt) |> lubridate::year()` and
+`r max(locs_sf$end_dt) |> lubridate::year()`. The deployments span all age classes
+with the exception of dependent pups for both species and were deployed during the
+months of April, May, and June. In some cases, deployments were initiated prior to molting
+and the bio-loggers fell off after a period of weeks to two months. Deployments
+initiated after molting transmitted up to 9 months.
+
+All deployments were checked for any data quality issues and inconsistent
+location estimates before they were run through a course speed filter to
+remove any locations that would have required a sustained swim speed greater
+than 25 km/h.
+
+Two data sets were created to separate movement in the months of April, May,
+and June from the rest of the year.
+
+```{r}
+filter_tracks <- function(tracks_sf) {
+  
+  crs <- sf::st_crs(tracks_sf)
+  dat <- tracks_sf %>%
+    sf::st_transform(4326) %>%
+    ungroup() %>%
+    arrange(deployid, locs_dt)
+  dat_tr <- trip::trip(dat, c("locs_dt","deployid"), correct_all = FALSE)
+  
+  suppressWarnings(
+    keep <- trip::sda(
+      dat_tr,
+      smax = 25 #km/hour
+    )
+  )
+  
+  tracks_filt <- dat %>%
+    mutate(sda_keep = keep) %>%
+    filter(sda_keep) %>%
+    dplyr::select(-c(sda_keep, rank)) %>%
+    st_transform(crs)
+  return(tracks_filt)
+}
+
+locs_sf <- locs_sf |> 
+  filter_tracks()
+
+locs_sf_spring <- locs_sf |> 
+  dplyr::filter(tag_type %in% c('SPLA','SGPS')) |> 
+  dplyr::filter(lubridate::month(locs_dt) %in% c(3,4,5)) |> 
+  dplyr::arrange(deployid,locs_dt) 
+
+locs_sf_open_water <- locs_sf |> 
+  dplyr::filter(tag_type %in% c('SPLA','SGPS')) |> 
+  dplyr::filter(!lubridate::month(locs_dt) %in% c(3,4,5)) |> 
+  dplyr::arrange(deployid,locs_dt) 
+
+```
+
+Utilization distributions were estimated for each species and each of the
+seasonal periods based on a continuous time movement model (R package `ctmm`).
+Specifically, optimally weighted auto-correlated kernel density estimates (wAKDE)
+were created to reflect a more honest account of space use while also mitigating
+sampling bias from irregular deployment lengths.
+
+```{r}
+as_telem <- function(locs_sf, out_proj) {
+  locs_df <- locs_sf |> 
+    sfheaders::sf_to_df(fill = TRUE) |> 
+    rename(
+      individual.local.identifier = deployid,
+      timestamp = locs_dt,
+      location.long = x,
+      location.lat = y,
+      Argos.orientation = error_ellipse_orientation,
+      Argos.semi.minor = error_semi_minor_axis,
+      Argos.semi.major = error_semi_major_axis,
+      Argos.location.class = quality
+    )
+  locs_df <- ctmm::as.telemetry(
+    object = locs_df, 
+    projection = out_proj)
+
+  return(locs_df)
+}
+```
+
+```{r}
+pl_telem_spring <- as_telem(locs_sf_spring |> 
+                              dplyr::filter(species == 'Spotted seal'),
+                            out_proj = 'epsg:3571'
+                            )
+pl_telem_open_water <- as_telem(locs_sf_open_water |> 
+                                  dplyr::filter(species == 'Spotted seal'),
+                                out_proj = 'epsg:3571'
+                                )
+hf_telem_spring <- as_telem(locs_sf_spring |> 
+                              dplyr::filter(species == 'Ribbon seal'),
+                            out_proj = 'epsg:3571'
+                            )
+hf_telem_open_water <- as_telem(locs_sf_open_water |> 
+                                  dplyr::filter(species == 'Ribbon seal'),
+                                out_proj = 'epsg:3571'
+                                )
+```
+
+```{r}
+GUESS <- map(pl_telem_spring, ctmm.guess, interactive = FALSE)
+```
+
