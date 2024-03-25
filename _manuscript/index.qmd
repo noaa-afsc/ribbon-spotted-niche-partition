@@ -85,6 +85,14 @@ library(ctmm)
 library(sfheaders)
 ```
 
+::: {.callout-warning}
+## Under Development. Please do not cite or use
+
+Please note this analysis and manuscript is still in draft form and under active development. Changes to results, code, and the manuscript are likely and this should not be cited or used for any reason. We are sharing the work and development of this manuscript in the spirit of open science, improved transparency, and scientific reproducibility. 
+
+We plan to provide a preprint to bioRxiv once prior to journal submission.
+:::
+
 # Introduction
 
 # Methods
