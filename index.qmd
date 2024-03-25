@@ -7,7 +7,26 @@ author:
     orcid: 0000-0002-3647-5046
     affiliations:
       - ref: noaa-mml
-
+  - name: Heather L. Ziel
+    email: heather.ziel@noaa.gov
+    affiliations:
+      - ref: noaa-mml
+  - name: Lorrie D. Rea
+    email: ldrea@alaska.edu
+    affiliations:
+      - ref: uaf
+  - name: Stacie M. Koslovsky
+    email: stacie.koslovsky@noaa.gov
+    affiliations:
+      - ref: noaa-mml
+  - name: Michael F. Cameron
+    email: michael.cameron@noaa.gov
+    affiliations:
+      - ref: noaa-mml
+  - name: Peter L. Boveng
+    email: peter.boveng@noaa.gov
+    affiliations:
+      - ref: noaa-mml
 affiliations:
   - id: noaa-mml
     name: Alaska Fisheries Science Center
@@ -15,16 +34,40 @@ affiliations:
     address: 7600 Sand Point Way NE
     city: Seattle
     state: WA
+  - id: uaf
+    name: University of Alaska, Fairbanks
+    department: Water and Environmental Research Center, Institute of Northern Engineering
+    city: Fairbanks
+    state: AK
 abstract: > 
-  Ecoclogial niche partitioning allows sympatric species to co-exist in space and
-  time while reducing direct competition for resources. In deep-diving seals
-  (_Phocidae_) such niche partitioning can be observed as temporal differentiation
-  in overlap, two-dimensional separation in space, three-dimensional separation
-  in the water column, and variability in isotopic space. Here, we focus on two
-  species of phocid seals in Bering Sea of Alaska -- ribbon seals
-  (_Histriophoca fasciata_) and spotted seals (_Phoca largha_) -- and evidence for
-  niche partitioning from two decades of bio-logger deployments and sampling of
-  stable isotopes from multiple tissue types with different intergration times.
+  In deep-diving seals (Phocidae) niche partitioning can be observed as
+  dillineation in time, two- or three-dimensional space, or isotopic space.
+  Here, we focus on two species of seals in the Bering Sea -- ribbon seals
+  (Histriophoca fasciata) and spotted seals (Phoca  largha) -- and evidence for
+  niche partitioning from two decades of bio-logger deployments (110 ribbon; 82
+  spotted) and stable isotope sampling. Whiskers of dependent pups in the spring
+  reflect the isotopic space of adult females in the winter (when the pup was
+  developing in-utero) and sampling from the whisker base of adults in the
+  spring corresponds with recent isotopic space (when those tissues were
+  generated). In both seasons, species differentiation was observed with spotted
+  seals having higher mean δ13C ( winter: +6.4%; spring: +3.4%) and δ15N
+  (winter: +10.5%; spring = +14.1%) values which are reflective of on-shelf and
+  coastal foraging. Utilization distributions (UD) were estimated from
+  bio-logger geolocations for each species during similar seasonal periods
+  ('spring' and 'fall-winter'). Optimally weighted auto-correlated kernel
+  density estimates were combined into a population UD to test spatial overlap.
+  Greater overlap was observed in the spring when both species rely on the
+  marginal sea-ice zone for pupping, breeding, and molting. More separation was
+  observed during the fall-winter season when spotted seals remained largely on
+  the shelf and ribbon seals shifted to the shelf break and Bering sea basin.
+  Lastly, dive behavior records from bio-loggers showed ribbon seals
+  consistently diving to deeper depths (max dive depth = ~600m) compared to
+  spotted seals (max dive depth = ~300m) indicating additional partitioning of
+  resources within the water column. Changes in the extent and timing of sea ice
+  in the Bering sea along with anomalous warming events could disrupt the niche
+  partitioning these seals have evolved and, thus, challenge their resilience to
+  climate change.
+
   
 execute:
   include: false
@@ -39,6 +82,7 @@ library(tidyr)
 library(ggplot2)
 library(sf)
 library(ctmm)
+library(sfheaders)
 ```
 
 # Introduction
@@ -46,34 +90,48 @@ library(ctmm)
 # Methods
 
 ```{r}
-locs_sf <- readRDS(here::here('data/locs_sf.rds'))
+locs_sf <- readRDS(here::here('data/locs_sf.rds')) |> 
+  dplyr::filter(tag_type %in% c('SPLA','SGPS'))
+
+N_tags <- locs_sf |> 
+  dplyr::distinct(ptt) |> nrow()
+N_ribbon <- locs_sf |> 
+  dplyr::filter(species == 'Ribbon seal') |> 
+  dplyr::distinct(speno) |> nrow()
+N_spotted <- locs_sf |> 
+  dplyr::filter(species == 'Spotted seal') |> 
+  dplyr::distinct(speno) |> nrow()
 ```
 
-A total of `r locs_sf |> dplyr::distinct(ptt) |> nrow()` bio-loggers (SPLASH
-family, Wildlife Computers, Redmond, Washington, USA) were deployed on
-`r locs_sf |> dplyr::filter(species == 'Ribbon seal') |> distinct(speno) |> nrow()`
-ribbon seals and 
-`r locs_sf |> dplyr::filter(species == 'Spotted seal') |> distinct(speno) |> nrow()`
-spotted seals between `r min(locs_sf$deploy_dt) |> lubridate::year()` and
-`r max(locs_sf$end_dt) |> lubridate::year()`. The deployments span all age classes
-with the exception of dependent pups for both species and were deployed during the
-months of April, May, and June. In some cases, deployments were initiated prior to molting
-and the bio-loggers fell off after a period of weeks to two months. Deployments
-initiated after molting transmitted up to 9 months.
+A total of `r N_tags` bio-loggers (SPLASH
+family, Wildlife Computers, Redmond, Washington, USA) were deployed on `r
+N_ribbon`
+ribbon seals and `r N_spotted` spotted seals between `r min(locs_sf$deploy_dt) |>
+lubridate::year()` and `r max(locs_sf$end_dt) |> lubridate::year()`. The
+deployments span all age classes with the exception of dependent pups for both
+species and were deployed during the months of April, May, and June. In some
+cases, deployments were initiated prior to molting and the bio-loggers fell off
+after a period of weeks to two months. Deployments initiated after molting
+transmitted up to ~9 months.
 
 All deployments were checked for any data quality issues and inconsistent
 location estimates before they were run through a course speed filter to
 remove any locations that would have required a sustained swim speed greater
-than 20 km/h. Additionally, any deployments with fewer than 30 location
-estimates or a total deployment length less than 7 days were removed.
+than 15 km/h. Additionally, any deployments with fewer than 30 location
+estimates or a total deployment length less than 7 days were removed. Lastly,
+to improve movement model fitting, we thinned the location estimates to
+remove any time steps less than 10 minutes.
 
-Two data sets for each species were created to separate movement in the months of April, May,
-and June from the rest of the year. The continuous time movement model used in
-the analysis is predicated on a general range limitation to the underlying
-movement behavior. Both species have known association with the marginal
-sea-ice zone during those months as they focus on pupping, breeding, and
-molting. Initially, no seasonal divisions are specified for the remainder of
-the year but may be required in subsequent analyses.
+Two data sets for each species were created to include only movement in the
+months of April, May, and June ('spring') and October, November, and December
+('open water'). The continuous time movement model used in the analysis is
+stationary and predicated on a general range limitation to the underlying
+movement behavior. Both species have known association with the marginal sea-ice
+zone during the spring months as they focus on pupping, breeding, and molting.
+The fall/winter months were chosen to match the time duration of the spring
+period when the Bering Sea is largely ice free. This period also coincides with
+the season when in-utero development of pups that are sampled for stable isotope
+analysis in the spring.
 
 ```{r}
 filter_tracks <- function(tracks_sf) {
@@ -88,7 +146,7 @@ filter_tracks <- function(tracks_sf) {
   suppressWarnings(
     keep <- trip::sda(
       dat_tr,
-      smax = 20 #km/hour
+      smax = 15 #km/hour
     )
   )
   
@@ -101,17 +159,30 @@ filter_tracks <- function(tracks_sf) {
 }
 
 locs_sf <- locs_sf |> 
+  dplyr::filter(tag_type %in% c('SPLA','SGPS'),
+                quality != 'Z') |> 
+  dplyr::group_by(deployid) |> 
+  dplyr::arrange(deployid,locs_dt) |> 
+  dplyr::filter(n() > 30L) |> 
+  dplyr::filter(difftime(max(locs_dt),min(locs_dt),units = "days") > 7) |> 
+  dplyr::ungroup() |> 
   filter_tracks()
 
 locs_sf_spring <- locs_sf |> 
-  dplyr::filter(tag_type %in% c('SPLA','SGPS')) |> 
   dplyr::filter(lubridate::month(locs_dt) %in% c(3,4,5)) |> 
-  dplyr::arrange(deployid,locs_dt) 
+  dplyr::group_by(deployid) |> 
+  dplyr::arrange(deployid,locs_dt) |> 
+  dplyr::filter(n() > 30L) |> 
+  dplyr::filter(difftime(max(locs_dt),min(locs_dt),units = "days") > 7) |> 
+  dplyr::ungroup()
 
-locs_sf_open_water <- locs_sf |> 
-  dplyr::filter(tag_type %in% c('SPLA','SGPS')) |> 
-  dplyr::filter(!lubridate::month(locs_dt) %in% c(3,4,5)) |> 
-  dplyr::arrange(deployid,locs_dt) 
+locs_sf_open <- locs_sf |> 
+  dplyr::filter(lubridate::month(locs_dt) %in% c(10,11,12)) |> 
+  dplyr::group_by(deployid) |> 
+  dplyr::arrange(deployid,locs_dt) |> 
+  dplyr::filter(n() > 30L) |> 
+  dplyr::filter(difftime(max(locs_dt),min(locs_dt),units = "days") > 7) |> 
+  dplyr::ungroup()
 
 ```
 
@@ -125,12 +196,28 @@ should better reflect spatial distribution of the broader population beyond
 just the sampled seals.
 
 ```{r}
+thin_tracks <- function(locs_sf) {
+  dat <- locs_sf |> 
+    dplyr::group_by(deployid) |> 
+    dplyr::arrange(deployid, locs_dt) |> 
+    dplyr::mutate(lag_interval = difftime(locs_dt,dplyr::lag(locs_dt), units = "secs"),
+                  median_interval = stats::median(lag_interval,na.rm=TRUE)) |> 
+    dplyr::filter(is.na(lag_interval) | lag_interval > median_interval/2) |> 
+    dplyr::ungroup()
+  
+  return(dat)
+}
+```
+
+```{r}
 as_telem <- function(locs_sf, out_proj) {
+  
   locs_df <- locs_sf |> 
+    thin_tracks() |> 
     sfheaders::sf_to_df(fill = TRUE)
   # separate fastloc and argos
-  locs_f <- locs_df |> filter(type%in%c("FastGPS","known","User"))
-  locs_a <- locs_df |> filter(type=="Argos")
+  locs_f <- locs_df |> filter(type %in% c("FastGPS","known","User"))
+  locs_a <- locs_df |> filter(type == "Argos")
   rm(locs_df)
   
   # rename for movebank conventions and convert
@@ -149,7 +236,8 @@ as_telem <- function(locs_sf, out_proj) {
     )
   locs_a <- ctmm::as.telemetry(object = locs_a, projection = out_proj)
   locs_a <- tibble(deployid=names(locs_a), telem=locs_a)
-
+  
+  if(nrow(locs_f) > 0) {
   locs_f <- locs_f |>
     rename(
       individual.local.identifier = deployid,
@@ -159,6 +247,7 @@ as_telem <- function(locs_sf, out_proj) {
     ) %>% mutate(
       HDOP = dplyr::case_when(
         type == "known" ~ sqrt(2),
+        type == "User" ~ sqrt(2),
         type=="FastGPS" & quality=="4" ~ sqrt(2)*(1163)/20,
         type=="FastGPS" & quality=="5" ~ sqrt(2)*(169)/20,
         type=="FastGPS" & quality=="6" ~ sqrt(2)*(71)/20,
@@ -173,6 +262,7 @@ as_telem <- function(locs_sf, out_proj) {
     )
   locs_f <- ctmm::as.telemetry(object = locs_f, projection = out_proj)
   uere(locs_f) <- 20
+  if(!class(locs_f) == "list") { locs_f <- list(locs_f) }
   locs_f <- tibble(deployid=names(locs_f), telem=locs_f)
 
 
@@ -180,6 +270,10 @@ as_telem <- function(locs_sf, out_proj) {
   locs_df <- locs_df |> rowwise() |> mutate(
     data = list(data$telem |> ctmm::tbind())
   )
+  } else {
+    locs_df <- locs_a |> 
+      dplyr::rename(data = telem)
+  }
   
   names(locs_df$data) <- locs_df$deployid
 
@@ -188,11 +282,14 @@ as_telem <- function(locs_sf, out_proj) {
 ```
 
 ```{r}
+
+locs_telem <- as_telem(locs_sf, out_proj = 'epsg:3571')
+
 pl_telem_spring <- as_telem(locs_sf_spring |> 
                               dplyr::filter(species == 'Spotted seal'),
                             out_proj = 'epsg:3571'
                             )
-pl_telem_open_water <- as_telem(locs_sf_open_water |> 
+pl_telem_open <- as_telem(locs_sf_open |> 
                                   dplyr::filter(species == 'Spotted seal'),
                                 out_proj = 'epsg:3571'
                                 )
@@ -200,41 +297,206 @@ hf_telem_spring <- as_telem(locs_sf_spring |>
                               dplyr::filter(species == 'Ribbon seal'),
                             out_proj = 'epsg:3571'
                             )
-hf_telem_open_water <- as_telem(locs_sf_open_water |> 
+hf_telem_open <- as_telem(locs_sf_open |> 
                                   dplyr::filter(species == 'Ribbon seal'),
                                 out_proj = 'epsg:3571'
                                 )
 ```
 
 ```{r}
+#| eval: false
+locs_fits <- vector("list", length = nrow(locs_telem))
+
+for(i in seq_along(locs_telem$data)) {
+  guess <- ctmm.guess(locs_telem$data[[i]], interactive = FALSE)
+  locs_fits[[i]] <- ctmm.select(locs_telem$data[[i]], guess)
+}
+
+```
+
+
+```{r}
+#| eval: false
 hf_fits_spring <- vector("list", length = nrow(hf_telem_spring))
 
 for(i in seq_along(hf_telem_spring$data)) {
   guess <- ctmm.guess(hf_telem_spring$data[[i]], interactive = FALSE)
-  hf_fits_spring[[i]] <- ctmm.select(hf_telem_spring$data[[i]], guess)
+  hf_fits_spring[[i]] <- ctmm.select(hf_telem_spring$data[[i]], guess, trace=3)
 }
 
 names(hf_fits_spring) <- names(hf_telem_spring$data)
 
 hf_akde_spring <- akde(hf_telem_spring$data,hf_fits_spring,weights=TRUE)
-col <- color(hf_akde_spring, by='individual')
 
 hf_pkde_spring <- pkde(hf_telem_spring$data, hf_akde_spring)
 ```
 
 ```{r}
-hf_fits_open_water <- vector("list", length = nrow(hf_telem_open_water))
+#| eval: false
+hf_fits_open <- vector("list", length = nrow(hf_telem_open))
 
-for(i in seq_along(hf_telem_open_water$data)) {
-  guess <- ctmm.guess(hf_telem_open_water$data[[i]], interactive = FALSE)
-  hf_fits_open_water[[i]] <- ctmm.select(hf_telem_open_water$data[[i]], guess)
+for(i in seq_along(hf_telem_open$data)) {
+  guess <- ctmm.guess(hf_telem_open$data[[i]], interactive = FALSE)
+  hf_fits_open[[i]] <- ctmm.select(hf_telem_open$data[[i]], guess)
 }
 
-names(hf_fits_open_water) <- names(hf_telem_open_water$data)
+names(hf_fits_open) <- names(hf_telem_open$data)
 
-hf_akde_open_water <- akde(hf_telem_open_water$data,hf_fits_open_water,weights=TRUE)
+hf_akde_open <- akde(hf_telem_open$data,hf_fits_open,weights=TRUE)
+saveRDS(hf_akde_open,here::here('data/hf_akde_open.rds'))
 
-hf_pkde_open_water <- pkde(hf_telem_open_water$data, hf_akde_open_water)
+hf_pkde_open <- pkde(hf_telem_open$data, hf_akde_open)
+saveRDS(hf_pkde_open,here::here('data/hf_pkde_open.rds'))
 ```
 
+```{r}
+#| eval: false
+pl_fits_spring <- vector("list", length = nrow(pl_telem_spring))
+
+for(i in seq_along(pl_telem_spring$data)) {
+  guess <- ctmm.guess(pl_telem_spring$data[[i]], interactive = FALSE)
+  pl_fits_spring[[i]] <- ctmm.select(pl_telem_spring$data[[i]], guess, trace=3)
+}
+
+names(pl_fits_spring) <- names(pl_telem_spring$data)
+
+pl_akde_spring <- akde(pl_telem_spring$data,
+                       pl_fits_spring,
+                       weights=TRUE)
+
+pl_pkde_spring <- pkde(pl_telem_spring$data, pl_akde_spring)
+```
+
+```{r}
+#| eval: false
+pl_fits_open <- vector("list", length = nrow(pl_telem_open))
+
+for(i in seq_along(pl_telem_open$data)) {
+  guess <- ctmm.guess(pl_telem_open$data[[i]], interactive = FALSE)
+  pl_fits_open[[i]] <- ctmm.select(pl_telem_open$data[[i]], guess)
+}
+
+names(pl_fits_open) <- names(pl_telem_open$data)
+
+pl_akde_open <- akde(pl_telem_open$data,pl_fits_open,weights=TRUE)
+saveRDS(pl_akde_open,here::here('data/pl_akde_open.rds'))
+
+pl_pkde_open <- pkde(pl_telem_open$data, pl_akde_open)
+saveRDS(pl_pkde_open,here::here('data/pl_pkde_open.rds'))
+```
+
+
+```{r}
+library(SIBER)
+
+si_data <- readRDS(here::here('data/si_data.rds'))
+```
+
+Stable isotope analysis was based on whiskers sampled from all age classes
+including dependent pups. For all age classes, samples were taken along the
+length of the whisker starting at the root. Samples further from the root
+represent the isotopic space further back in time. Stable isotopes from whiskers
+of dependent pups in the spring reflect the isotopic space of adult females in
+the winter (when the pup was developing in-utero) and sampling from the whisker
+base of adults in the spring corresponds with recent isotopic use (when those
+tissues were generated). Growth rates of whiskers in phocids are not linear
+and, thus, we can't attribute a specific segment of the whisker to a specific
+point in time -- except for the root segment. Dependent pups, however, offer a
+unique opportunity because we know the majority of the whisker was developed
+in-utero and would represent the adult female's forgaing during the preceding
+fall/winter. Once the pup starts nursing, however, the trophic level changes
+and we can expect segments nearest the root to reflect this. For this analysis
+we only consider samples from the distant half of the whisker to most closely
+match the in-utero period. We simply averaged those samples.
+
+
+```{r}
+pup_si_data <- si_data |> 
+  dplyr::filter(age_class %in% c('Pup'),
+         whisker_segment_num > 7) |> 
+  dplyr::summarise(value = mean(result_value),
+                   .by = c(speno,common_name,capture_dt,
+                           age_class,sex,result_type)) |> 
+  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
+  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
+  dplyr::mutate(community = 1) |> 
+  as.data.frame()
+
+
+pup_siber <- SIBER::createSiberObject(pup_si_data)
+
+
+group.ellipses.args  <- list(n = 100, p.interval = 0.95, 
+                             ci.mean = T, lty = 1, lwd = 2)
+group.hulls.args     <- list(lty = 2, col = "grey20")
+
+adult_si_data <- si_data |> 
+  dplyr::filter(!age_class %in% c('Pup','Young of year'),
+                whisker_segment_num == 1) |> 
+  dplyr::summarise(value = mean(result_value),
+                   .by = c(speno,common_name,capture_dt,
+                           age_class,sex,result_type)) |> 
+  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
+  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
+  dplyr::mutate(community = 1) |> 
+  as.data.frame()
+
+adult_siber <- SIBER::createSiberObject(adult_si_data)
+
+group.ellipses.args  <- list(n = 100, p.interval = 0.95,
+                             ci.mean = T, lty = 1, lwd = 2)
+group.hulls.args     <- list(lty = 2, col = "grey20")
+
+```
+
+For comparison of the isotopic space, we used the R package, SIBER.
+
+## Results
+
+The figures below show results from the initial stable isotope analysis for
+pups sampled to represent adult female fall/winter foraging (figure 1) and for 
+sub-adults and adults (figure 2) sampled to represent their foraging close to
+the time of sampling (spring). 
+
+The plots show the values as well as a convex hull and an ellipse which
+represents the 95% confidence interval around the bivariate mean.
+
+```{r}
+#| include: true
+#| fig-cap: Isotopic space of ribbon and spotted seal adult females in winter
+#|   (sampled from dependent pup whiskers that developed in-utero)
+
+par(mfrow=c(1,1))
+plotSiberObject(pup_siber,
+                ax.pad = 1.5,
+                hulls = F, 
+                ellipses = T, group.ellipses.args = group.ellipses.args,
+                group.hulls = T, group.hulls.args = group.hulls.args,
+                bty = "L",
+                iso.order = c(1,2),
+                xlab = expression({delta}^13*C),
+                ylab = expression({delta}^15*N)
+)
+legend("topright",colnames(groupMetricsML(adult_siber)),
+       col = c(2:1,2:1), lty=1)
+```
+
+```{r}
+#| include: true
+#| fig-cap: Isotopic space of ribbon and spotted seal adults and sub-adults
+#|   sampled from the root of the whisker sampled in the spring
+par(mfrow=c(1,1))
+plotSiberObject(adult_siber,
+                ax.pad = 1.5,
+                hulls = F, 
+                ellipses = T, group.ellipses.args = group.ellipses.args,
+                group.hulls = T, group.hulls.args = group.hulls.args,
+                bty = "L",
+                iso.order = c(1,2),
+                xlab = expression({delta}^13*C),
+                ylab = expression({delta}^15*N)
+)
+legend("topright",colnames(groupMetricsML(adult_siber)),
+       col = c(2:1,2:1), lty=1)
+```
 

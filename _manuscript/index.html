@@ -7,7 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Josh M. London">
-<meta name="dcterms.date" content="2024-03-22">
+<meta name="author" content="Heather L. Ziel">
+<meta name="author" content="Lorrie D. Rea">
+<meta name="author" content="Stacie M. Koslovsky">
+<meta name="author" content="Michael F. Cameron">
+<meta name="author" content="Peter L. Boveng">
+<meta name="dcterms.date" content="2024-03-25">
 
 <title>Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change</title>
 <style>
@@ -35,6 +40,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -44,13 +52,18 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta name="citation_title" content="Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change">
-<meta name="citation_abstract" content="Ecoclogial niche partitioning allows sympatric species to co-exist in space and time while reducing direct competition for resources. In deep-diving seals (_Phocidae_) such niche partitioning can be observed as temporal differentiation in overlap, two-dimensional separation in space, three-dimensional separation in the water column, and variability in isotopic space. Here, we focus on two species of phocid seals in Bering Sea of Alaska -- ribbon seals (_Histriophoca fasciata_) and spotted seals (_Phoca largha_) -- and evidence for niche partitioning from two decades of bio-logger deployments and sampling of stable isotopes from multiple tissue types with different intergration times.
+<meta name="citation_abstract" content="In deep-diving seals (Phocidae) niche partitioning can be observed as dillineation in time, two- or three-dimensional space, or isotopic space. Here, we focus on two species of seals in the Bering Sea -- ribbon seals (Histriophoca fasciata) and spotted seals (Phoca  largha) -- and evidence for niche partitioning from two decades of bio-logger deployments (110 ribbon; 82 spotted) and stable isotope sampling. Whiskers of dependent pups in the spring reflect the isotopic space of adult females in the winter (when the pup was developing in-utero) and sampling from the whisker base of adults in the spring corresponds with recent isotopic space (when those tissues were generated). In both seasons, species differentiation was observed with spotted seals having higher mean δ13C ( winter: +6.4%; spring: +3.4%) and δ15N (winter: +10.5%; spring = +14.1%) values which are reflective of on-shelf and coastal foraging. Utilization distributions (UD) were estimated from bio-logger geolocations for each species during similar seasonal periods (&amp;amp;#039;spring' and 'fall-winter'). Optimally weighted auto-correlated kernel density estimates were combined into a population UD to test spatial overlap. Greater overlap was observed in the spring when both species rely on the marginal sea-ice zone for pupping, breeding, and molting. More separation was observed during the fall-winter season when spotted seals remained largely on the shelf and ribbon seals shifted to the shelf break and Bering sea basin. Lastly, dive behavior records from bio-loggers showed ribbon seals consistently diving to deeper depths (max dive depth = ~600m) compared to spotted seals (max dive depth = ~300m) indicating additional partitioning of resources within the water column. Changes in the extent and timing of sea ice in the Bering sea along with anomalous warming events could disrupt the niche partitioning these seals have evolved and, thus, challenge their resilience to climate change.
 ">
 <meta name="citation_author" content="Josh M. London">
-<meta name="citation_publication_date" content="2024-03-22">
-<meta name="citation_cover_date" content="2024-03-22">
+<meta name="citation_author" content="Heather L. Ziel">
+<meta name="citation_author" content="Lorrie D. Rea">
+<meta name="citation_author" content="Stacie M. Koslovsky">
+<meta name="citation_author" content="Michael F. Cameron">
+<meta name="citation_author" content="Peter L. Boveng">
+<meta name="citation_publication_date" content="2024-03-25">
+<meta name="citation_cover_date" content="2024-03-25">
 <meta name="citation_year" content="2024">
-<meta name="citation_online_date" content="2024-03-22">
+<meta name="citation_online_date" content="2024-03-25">
 <meta name="citation_language" content="en">
 </head>
 
@@ -66,11 +79,51 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-container">
       <div class="quarto-title-meta-column-start">
             <div class="quarto-title-meta-author">
-          <div class="quarto-title-meta-heading">Author</div>
-          <div class="quarto-title-meta-heading">Affiliation</div>
+          <div class="quarto-title-meta-heading">Authors</div>
+          <div class="quarto-title-meta-heading">Affiliations</div>
           
                 <div class="quarto-title-meta-contents">
             <p class="author">Josh M. London <a href="mailto:josh.london@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-3647-5046" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Alaska Fisheries Science Center
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Heather L. Ziel <a href="mailto:heather.ziel@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Alaska Fisheries Science Center
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Lorrie D. Rea <a href="mailto:ldrea@alaska.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        University of Alaska, Fairbanks
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Stacie M. Koslovsky <a href="mailto:stacie.koslovsky@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Alaska Fisheries Science Center
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Michael F. Cameron <a href="mailto:michael.cameron@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Alaska Fisheries Science Center
+                      </p>
+                  </div>
+                      <div class="quarto-title-meta-contents">
+            <p class="author">Peter L. Boveng <a href="mailto:peter.boveng@noaa.gov" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
@@ -85,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">March 22, 2024</p>
+              <p class="date">March 25, 2024</p>
             </div>
           </div>
           
@@ -99,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
       <div class="abstract">
         <div class="block-title">Abstract</div>
-        <p>Ecoclogial niche partitioning allows sympatric species to co-exist in space and time while reducing direct competition for resources. In deep-diving seals (<em>Phocidae</em>) such niche partitioning can be observed as temporal differentiation in overlap, two-dimensional separation in space, three-dimensional separation in the water column, and variability in isotopic space. Here, we focus on two species of phocid seals in Bering Sea of Alaska – ribbon seals (<em>Histriophoca fasciata</em>) and spotted seals (<em>Phoca largha</em>) – and evidence for niche partitioning from two decades of bio-logger deployments and sampling of stable isotopes from multiple tissue types with different intergration times.</p>
+        <p>In deep-diving seals (Phocidae) niche partitioning can be observed as dillineation in time, two- or three-dimensional space, or isotopic space. Here, we focus on two species of seals in the Bering Sea – ribbon seals (Histriophoca fasciata) and spotted seals (Phoca largha) – and evidence for niche partitioning from two decades of bio-logger deployments (110 ribbon; 82 spotted) and stable isotope sampling. Whiskers of dependent pups in the spring reflect the isotopic space of adult females in the winter (when the pup was developing in-utero) and sampling from the whisker base of adults in the spring corresponds with recent isotopic space (when those tissues were generated). In both seasons, species differentiation was observed with spotted seals having higher mean δ13C ( winter: +6.4%; spring: +3.4%) and δ15N (winter: +10.5%; spring = +14.1%) values which are reflective of on-shelf and coastal foraging. Utilization distributions (UD) were estimated from bio-logger geolocations for each species during similar seasonal periods (‘spring’ and ‘fall-winter’). Optimally weighted auto-correlated kernel density estimates were combined into a population UD to test spatial overlap. Greater overlap was observed in the spring when both species rely on the marginal sea-ice zone for pupping, breeding, and molting. More separation was observed during the fall-winter season when spotted seals remained largely on the shelf and ribbon seals shifted to the shelf break and Bering sea basin. Lastly, dive behavior records from bio-loggers showed ribbon seals consistently diving to deeper depths (max dive depth = ~600m) compared to spotted seals (max dive depth = ~300m) indicating additional partitioning of resources within the water column. Changes in the extent and timing of sea ice in the Bering sea along with anomalous warming events could disrupt the niche partitioning these seals have evolved and, thus, challenge their resilience to climate change.</p>
       </div>
     </div>
 
@@ -113,9 +166,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
@@ -131,10 +187,41 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
-<p>A total of 234 bio-loggers (SPLASH family, Wildlife Computers, Redmond, Washington, USA) were deployed on 110 ribbon seals and 82 spotted seals between 2005 and 2022. The deployments span all age classes with the exception of dependent pups for both species and were deployed during the months of April, May, and June. In some cases, deployments were initiated prior to molting and the bio-loggers fell off after a period of weeks to two months. Deployments initiated after molting transmitted up to 9 months.</p>
-<p>All deployments were checked for any data quality issues and inconsistent location estimates before they were run through a course speed filter to remove any locations that would have required a sustained swim speed greater than 25 km/h.</p>
-<p>Two data sets were created to separate movement in the months of April, May, and June from the rest of the year.</p>
-<p>Utilization distributions were estimated for each species and each of the seasonal periods based on a continuous time movement model (R package <code>ctmm</code>). Specifically, optimally weighted auto-correlated kernel density estimates (wAKDE) were created to reflect a more honest account of space use while also mitigating sampling bias from irregular deployment lengths.</p>
+<p>A total of 118 bio-loggers (SPLASH family, Wildlife Computers, Redmond, Washington, USA) were deployed on <code>r N_ribbon</code> ribbon seals and 50 spotted seals between 2005 and 2022. The deployments span all age classes with the exception of dependent pups for both species and were deployed during the months of April, May, and June. In some cases, deployments were initiated prior to molting and the bio-loggers fell off after a period of weeks to two months. Deployments initiated after molting transmitted up to ~9 months.</p>
+<p>All deployments were checked for any data quality issues and inconsistent location estimates before they were run through a course speed filter to remove any locations that would have required a sustained swim speed greater than 15 km/h. Additionally, any deployments with fewer than 30 location estimates or a total deployment length less than 7 days were removed. Lastly, to improve movement model fitting, we thinned the location estimates to remove any time steps less than 10 minutes.</p>
+<p>Two data sets for each species were created to include only movement in the months of April, May, and June (‘spring’) and October, November, and December (‘open water’). The continuous time movement model used in the analysis is stationary and predicated on a general range limitation to the underlying movement behavior. Both species have known association with the marginal sea-ice zone during the spring months as they focus on pupping, breeding, and molting. The fall/winter months were chosen to match the time duration of the spring period when the Bering Sea is largely ice free. This period also coincides with the season when in-utero development of pups that are sampled for stable isotope analysis in the spring.</p>
+<p>Utilization distributions were estimated for each species and each of the seasonal periods based on a continuous time movement model (R package <code>ctmm</code>). Specifically, optimally weighted auto-correlated kernel density estimates (wAKDE) were created to reflect a more honest account of space use while also mitigating sampling bias from irregular deployment lengths. The weighted AKDE utilization distributions were combined into a population kernel density estimate that should better reflect spatial distribution of the broader population beyond just the sampled seals.</p>
+<p>Stable isotope analysis was based on whiskers sampled from all age classes including dependent pups. For all age classes, samples were taken along the length of the whisker starting at the root. Samples further from the root represent the isotopic space further back in time. Stable isotopes from whiskers of dependent pups in the spring reflect the isotopic space of adult females in the winter (when the pup was developing in-utero) and sampling from the whisker base of adults in the spring corresponds with recent isotopic use (when those tissues were generated). Growth rates of whiskers in phocids are not linear and, thus, we can’t attribute a specific segment of the whisker to a specific point in time – except for the root segment. Dependent pups, however, offer a unique opportunity because we know the majority of the whisker was developed in-utero and would represent the adult female’s forgaing during the preceding fall/winter. Once the pup starts nursing, however, the trophic level changes and we can expect segments nearest the root to reflect this. For this analysis we only consider samples from the distant half of the whisker to most closely match the in-utero period. We simply averaged those samples.</p>
+<p>For comparison of the isotopic space, we used the R package, SIBER.</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The figures below show results from the initial stable isotope analysis for pups sampled to represent adult female fall/winter foraging (figure 1) and for sub-adults and adults (figure 2) sampled to represent their foraging close to the time of sampling (spring).</p>
+<p>The plots show the values as well as a convex hull and an ellipse which represents the 95% confidence interval around the bivariate mean.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"></a></p>
+<figcaption>Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)</figcaption>
+</figure>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"></a></p>
+<figcaption>Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring</figcaption>
+</figure>
+</div>
+</div>
+<a class="quarto-notebook-link" id="nblink-2" href="index-preview.html">Source: Article Notebook</a></div>
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)</span>
+<span class="glightbox-desc lightbox-desc-2">Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring</span>
+</div>
+</section>
 </section>
 
 </main>
@@ -549,6 +636,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
