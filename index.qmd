@@ -111,16 +111,14 @@ N_spotted <- locs_sf |>
   dplyr::distinct(speno) |> nrow()
 ```
 
-A total of `r N_tags` bio-loggers (SPLASH
-family, Wildlife Computers, Redmond, Washington, USA) were deployed on `r
-N_ribbon`
-ribbon seals and `r N_spotted` spotted seals between `r min(locs_sf$deploy_dt) |>
-lubridate::year()` and `r max(locs_sf$end_dt) |> lubridate::year()`. The
-deployments span all age classes with the exception of dependent pups for both
-species and were deployed during the months of April, May, and June. In some
-cases, deployments were initiated prior to molting and the bio-loggers fell off
-after a period of weeks to two months. Deployments initiated after molting
-transmitted up to ~9 months.
+A total of `r N_tags` bio-loggers (SPLASH family, Wildlife Computers, Redmond,
+Washington, USA) were deployed on `r N_ribbon` ribbon seals and `r N_spotted`
+spotted seals between `r min(locs_sf$deploy_dt) |> lubridate::year()` and 
+`r max(locs_sf$end_dt) |> lubridate::year()`. The deployments span all age classes
+with the exception of dependent pups for both species and were deployed during
+the months of April, May, and June. In some cases, deployments were initiated
+prior to molting and the bio-loggers fell off after a period of weeks to two
+months. Deployments initiated after molting transmitted up to ~9 months.
 
 All deployments were checked for any data quality issues and inconsistent
 location estimates before they were run through a course speed filter to
