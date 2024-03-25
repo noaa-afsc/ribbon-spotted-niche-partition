@@ -201,7 +201,7 @@ Under Development. Please do not cite or use
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
-<p>A total of 118 bio-loggers (SPLASH family, Wildlife Computers, Redmond, Washington, USA) were deployed on <code>r N_ribbon</code> ribbon seals and 50 spotted seals between 2005 and 2022. The deployments span all age classes with the exception of dependent pups for both species and were deployed during the months of April, May, and June. In some cases, deployments were initiated prior to molting and the bio-loggers fell off after a period of weeks to two months. Deployments initiated after molting transmitted up to ~9 months.</p>
+<p>A total of 118 bio-loggers (SPLASH family, Wildlife Computers, Redmond, Washington, USA) were deployed on 67 ribbon seals and 50 spotted seals between 2005 and 2022. The deployments span all age classes with the exception of dependent pups for both species and were deployed during the months of April, May, and June. In some cases, deployments were initiated prior to molting and the bio-loggers fell off after a period of weeks to two months. Deployments initiated after molting transmitted up to ~9 months.</p>
 <p>All deployments were checked for any data quality issues and inconsistent location estimates before they were run through a course speed filter to remove any locations that would have required a sustained swim speed greater than 15 km/h. Additionally, any deployments with fewer than 30 location estimates or a total deployment length less than 7 days were removed. Lastly, to improve movement model fitting, we thinned the location estimates to remove any time steps less than 10 minutes.</p>
 <p>Two data sets for each species were created to include only movement in the months of April, May, and June (‘spring’) and October, November, and December (‘open water’). The continuous time movement model used in the analysis is stationary and predicated on a general range limitation to the underlying movement behavior. Both species have known association with the marginal sea-ice zone during the spring months as they focus on pupping, breeding, and molting. The fall/winter months were chosen to match the time duration of the spring period when the Bering Sea is largely ice free. This period also coincides with the season when in-utero development of pups that are sampled for stable isotope analysis in the spring.</p>
 <p>Utilization distributions were estimated for each species and each of the seasonal periods based on a continuous time movement model (R package <code>ctmm</code>). Specifically, optimally weighted auto-correlated kernel density estimates (wAKDE) were created to reflect a more honest account of space use while also mitigating sampling bias from irregular deployment lengths. The weighted AKDE utilization distributions were combined into a population kernel density estimate that should better reflect spatial distribution of the broader population beyond just the sampled seals.</p>
@@ -215,7 +215,7 @@ Under Development. Please do not cite or use
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1" title="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-14-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1" title="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)"></a></p>
 <figcaption>Isotopic space of ribbon and spotted seal adult females in winter (sampled from dependent pup whiskers that developed in-utero)</figcaption>
 </figure>
 </div>
@@ -225,7 +225,7 @@ Under Development. Please do not cite or use
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"></a></p>
+<p><a href="index_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672" alt="Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring"></a></p>
 <figcaption>Isotopic space of ribbon and spotted seal adults and sub-adults sampled from the root of the whisker sampled in the spring</figcaption>
 </figure>
 </div>
@@ -650,7 +650,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
