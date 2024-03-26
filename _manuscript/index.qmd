@@ -40,33 +40,34 @@ affiliations:
     city: Fairbanks
     state: AK
 abstract: > 
-  In deep-diving seals (Phocidae) niche partitioning can be observed as
-  dillineation in time, two- or three-dimensional space, or isotopic space.
+  In deep-diving seals (Phocidae) niche partitioning has been observed as
+  delineation in time, multi-dimensional use of the ocean, or diet composition.
   Here, we focus on two species of seals in the Bering Sea -- ribbon seals
-  (Histriophoca fasciata) and spotted seals (Phoca  largha) -- and evidence for
-  niche partitioning from two decades of bio-logger deployments (110 ribbon; 82
-  spotted) and stable isotope sampling. Whiskers of dependent pups in the spring
-  reflect the isotopic space of adult females in the winter (when the pup was
-  developing in-utero) and sampling from the whisker base of adults in the
-  spring corresponds with recent isotopic space (when those tissues were
-  generated). In both seasons, species differentiation was observed with spotted
-  seals having higher mean δ13C ( winter: +6.4%; spring: +3.4%) and δ15N
-  (winter: +10.5%; spring = +14.1%) values which are reflective of on-shelf and
-  coastal foraging. Utilization distributions (UD) were estimated from
-  bio-logger geolocations for each species during similar seasonal periods
+  (Histriophoca fasciata) and spotted seals (Phoca largha) -- and evidence for
+  niche partitioning from two decades of bio-logger deployments (n=110 ribbon;
+  n=82 spotted) and stable isotope sampling (n=29 ribbon; n=43 spotted).
+  Whiskers of dependent pups in the spring reflect the isotopic space of adult
+  female diet in the winter (when the pup was developing in-utero) and sampling
+  from the whisker base of adults in the spring corresponds with the isotopic
+  space of their recent diet. In both seasons, spotted seals had higher mean
+  δ13C (winter: +6.9%; spring: +3.8%) and δ15N (winter: +10.5%; spring = +12.1%)
+  values, which are reflective of on-shelf and coastal foraging at a higher
+  trophic level. Two-dimensional utilization distributions (UD) were estimated
+  from bio-logger geolocations for each species during similar seasonal periods
   ('spring' and 'fall-winter'). Optimally weighted auto-correlated kernel
   density estimates were combined into a population UD to test spatial overlap.
   Greater overlap was observed in the spring when both species rely on the
   marginal sea-ice zone for pupping, breeding, and molting. More separation was
   observed during the fall-winter season when spotted seals remained largely on
-  the shelf and ribbon seals shifted to the shelf break and Bering sea basin.
-  Lastly, dive behavior records from bio-loggers showed ribbon seals
-  consistently diving to deeper depths (max dive depth = ~600m) compared to
-  spotted seals (max dive depth = ~300m) indicating additional partitioning of
-  resources within the water column. Changes in the extent and timing of sea ice
-  in the Bering sea along with anomalous warming events could disrupt the niche
-  partitioning these seals have evolved and, thus, challenge their resilience to
-  climate change.
+  the continental shelf and ribbon seals shifted to the shelf break and Bering
+  Sea basin. Dive behavior records showed ribbon seals consistently diving to
+  deeper depths (max dive depth = ~600m) compared to spotted seals (max dive
+  depth = ~300m) indicating additional partitioning of resources within the
+  water column. Changes in the extent and timing of sea ice in the Bering Sea
+  along with anomalous warming events could disrupt the niche partitioning
+  between these seal species and, thus, challenge their resilience to climate
+  change.
+
 
   
 execute:
@@ -319,6 +320,19 @@ for(i in seq_along(locs_telem$data)) {
 }
 
 ```
+
+
+```{r}
+#| eval: false
+pred_times <- seq(from=hf_telem_spring$data[[1]]$timestamp[1],
+                  to=hf_telem_spring$data[[1]]$timestamp[nrow(hf_telem_spring$data[[1]])],
+                  by=15 %#% 'min')
+
+pred_track <- ctmm::predict(object = hf_fits_spring[[1]],
+                            data = hf_telem_spring$data[[1]],
+                      dt = 600)
+```
+
 
 
 ```{r}
