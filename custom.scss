@@ -13,6 +13,10 @@ h1.title {
   color: black;
 }
 
+#title-block-header.quarto-title-block.default .keywords>p,#title-block-header.quarto-title-block.default .description>p,#title-block-header.quarto-title-block.default .abstract>p {
+    font-size: 1em
+}
+
 .abstract .block-title {
   font-family: Roboto, Sans-Serif;
 }
