@@ -6,35 +6,35 @@ author:
     email: josh.london@noaa.gov
     orcid: 0000-0002-3647-5046
     affiliations:
-      - ref: noaa-mml
+      - ref: a
   - name: Heather L. Ziel
     email: heather.ziel@noaa.gov
     affiliations:
-      - ref: noaa-mml
+      - ref: a
   - name: Lorrie D. Rea
     email: ldrea@alaska.edu
     affiliations:
-      - ref: uaf
+      - ref: b
   - name: Stacie M. Koslovsky
     email: stacie.koslovsky@noaa.gov
     affiliations:
-      - ref: noaa-mml
+      - ref: a
   - name: Michael F. Cameron
     email: michael.cameron@noaa.gov
     affiliations:
-      - ref: noaa-mml
+      - ref: a
   - name: Peter L. Boveng
     email: peter.boveng@noaa.gov
     affiliations:
-      - ref: noaa-mml
+      - ref: a
 affiliations:
-  - id: noaa-mml
+  - id: a
     name: Alaska Fisheries Science Center
     department: National Marine Fisheries Service
     address: 7600 Sand Point Way NE
     city: Seattle
     state: WA
-  - id: uaf
+  - id: b
     name: University of Alaska, Fairbanks
     department: Water and Environmental Research Center, Institute of Northern Engineering
     city: Fairbanks

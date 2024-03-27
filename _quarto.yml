@@ -17,4 +17,9 @@ format:
     linestretch: 1.5
     toc: true
   docx: default
-  pdf: default
+  elsevier-pdf:
+    journal:
+      formatting: preprint
+      model: 3p
+      layout: onecolumn
+      cite-style: authoryear

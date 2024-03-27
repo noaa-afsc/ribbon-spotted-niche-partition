@@ -4,9 +4,10 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrartcl}
+  authoryear,
+  preprint,
+  3p,
+  onecolumn]{elsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -41,7 +42,7 @@
 \makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
@@ -78,7 +79,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -139,6 +139,8 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-harv}
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -153,16 +155,53 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+\setlength{\parindent}{6pt}
+\begin{document}
+
+\begin{frontmatter}
 \title{Evidence for ecological niche partitioning among ribbon and
 spotted seals in the Bering Sea and implications for their resilience to
 climate change}
-\author{Josh M. London \and Heather L. Ziel \and Lorrie D.
-Rea \and Stacie M. Koslovsky \and Michael F. Cameron \and Peter L.
-Boveng}
-\date{2024-03-27}
+\author[1]{Josh M. London%
+%
+}
+ \ead{josh.london@noaa.gov} 
+\author[1]{Heather L. Ziel%
+%
+}
+ \ead{heather.ziel@noaa.gov} 
+\author[2]{Lorrie D. Rea%
+%
+}
+ \ead{ldrea@alaska.edu} 
+\author[1]{Stacie M. Koslovsky%
+%
+}
+ \ead{stacie.koslovsky@noaa.gov} 
+\author[1]{Michael F. Cameron%
+%
+}
+ \ead{michael.cameron@noaa.gov} 
+\author[1]{Peter L. Boveng%
+%
+}
+ \ead{peter.boveng@noaa.gov} 
 
-\begin{document}
-\maketitle
+\affiliation[1]{organization={Alaska Fisheries Science Center, National
+Marine Fisheries Service},addressline={7600 Sand Point Way
+NE},city={Seattle},postcodesep={}}
+\affiliation[2]{organization={University of Alaska, Fairbanks, Water and
+Environmental Research Center, Institute of Northern
+Engineering},city={Fairbanks},postcodesep={}}
+
+\cortext[cor1]{Corresponding author}
+
+
+
+
+
+
+        
 \begin{abstract}
 In deep-diving seals (\emph{Phocidae}) niche partitioning has been
 observed as delineation in time, multi-dimensional use of the ocean, or
@@ -195,7 +234,7 @@ the Bering Sea along with anomalous warming events could disrupt the
 niche partitioning between these seal species and, thus, challenge their
 resilience to climate change.
 
-\begin{tcolorbox}[enhanced jigsaw, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, left=2mm, coltitle=black, opacityback=0, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, bottomrule=.15mm, titlerule=0mm, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, bottomtitle=1mm, title={Under Development. Please do not cite or use}, toprule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, leftrule=.75mm, rightrule=.15mm, title={Under Development. Please do not cite or use}, bottomrule=.15mm, opacitybacktitle=0.6, opacityback=0, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, arc=.35mm, bottomtitle=1mm, breakable, titlerule=0mm, colback=white, toprule=.15mm, coltitle=black, left=2mm]
 
 Please note this analysis and manuscript is still in draft form and
 under active development. Changes to results, code, and the manuscript
@@ -208,6 +247,12 @@ We plan to provide a preprint to bioRxiv prior to journal submission.
 \end{tcolorbox}
 \end{abstract}
 
+
+
+
+
+\end{frontmatter}
+    
 \section{Introduction}\label{introduction}
 
 \begin{itemize}
