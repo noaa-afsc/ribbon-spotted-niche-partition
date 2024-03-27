@@ -1,5 +1,5 @@
 ---
-title: "Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resiliency to climate change"
+title: "Evidence for ecological niche partitioning among ribbon and spotted seals in the Bering Sea and implications for their resilience to climate change"
 date: today
 author:
   - name: Josh M. London
@@ -39,39 +39,9 @@ affiliations:
     department: Water and Environmental Research Center, Institute of Northern Engineering
     city: Fairbanks
     state: AK
-abstract: > 
-  In deep-diving seals (Phocidae) niche partitioning has been observed as
-  delineation in time, multi-dimensional use of the ocean, or diet composition.
-  Here, we focus on two species of seals in the Bering Sea -- ribbon seals
-  (Histriophoca fasciata) and spotted seals (Phoca largha) -- and evidence for
-  niche partitioning from two decades of bio-logger deployments (n=110 ribbon;
-  n=82 spotted) and stable isotope sampling (n=29 ribbon; n=43 spotted).
-  Whiskers of dependent pups in the spring reflect the isotopic space of adult
-  female diet in the winter (when the pup was developing in-utero) and sampling
-  from the whisker base of adults in the spring corresponds with the isotopic
-  space of their recent diet. In both seasons, spotted seals had higher mean
-  δ13C (winter: +6.9%; spring: +3.8%) and δ15N (winter: +10.5%; spring = +12.1%)
-  values, which are reflective of on-shelf and coastal foraging at a higher
-  trophic level. Two-dimensional utilization distributions (UD) were estimated
-  from bio-logger geolocations for each species during similar seasonal periods
-  ('spring' and 'fall-winter'). Optimally weighted auto-correlated kernel
-  density estimates were combined into a population UD to test spatial overlap.
-  Greater overlap was observed in the spring when both species rely on the
-  marginal sea-ice zone for pupping, breeding, and molting. More separation was
-  observed during the fall-winter season when spotted seals remained largely on
-  the continental shelf and ribbon seals shifted to the shelf break and Bering
-  Sea basin. Dive behavior records showed ribbon seals consistently diving to
-  deeper depths (max dive depth = ~600m) compared to spotted seals (max dive
-  depth = ~300m) indicating additional partitioning of resources within the
-  water column. Changes in the extent and timing of sea ice in the Bering Sea
-  along with anomalous warming events could disrupt the niche partitioning
-  between these seal species and, thus, challenge their resilience to climate
-  change.
 
-
-  
-execute:
-  include: false
+filters:
+  - abstract-section
 ---
 
 ```{r}
@@ -84,19 +54,176 @@ library(ggplot2)
 library(sf)
 library(ctmm)
 library(sfheaders)
+library(SIBER)
 ```
+
+# Abstract
+
+In deep-diving seals (_Phocidae_) niche partitioning has been observed as
+delineation in time, multi-dimensional use of the ocean, or diet composition.
+Here, we focus on two species of seals in the Bering Sea -- ribbon seals
+(_Histriophoca fasciata_) and spotted seals (_Phoca largha_) -- and evidence for
+niche partitioning from two decades of bio-logger deployments (n=110 ribbon;
+n=82 spotted) and stable isotope sampling (n=29 ribbon; n=43 spotted).
+Whiskers of dependent pups in the spring reflect the isotopic space of adult
+female diet in the winter (when the pup was developing in-utero) and sampling
+from the whisker base of adults in the spring corresponds with the isotopic
+space of their recent diet. In both seasons, spotted seals had higher mean
+δ13C (winter: +6.9%; spring: +3.8%) and δ15N (winter: +10.5%; spring = +12.1%)
+values, which are reflective of on-shelf and coastal foraging at a higher
+trophic level. Two-dimensional utilization distributions (UD) were estimated
+from bio-logger geolocations for each species during similar seasonal periods
+('spring' and 'fall-winter'). Optimally weighted auto-correlated kernel
+density estimates were combined into a population UD to test spatial overlap.
+Greater overlap was observed in the spring when both species rely on the
+marginal sea-ice zone for pupping, breeding, and molting. More separation was
+observed during the fall-winter season when spotted seals remained largely on
+the continental shelf and ribbon seals shifted to the shelf break and Bering
+Sea basin. Dive behavior records showed ribbon seals consistently diving to
+deeper depths (max dive depth = ~600m) compared to spotted seals (max dive
+depth = ~300m) indicating additional partitioning of resources within the
+water column. Changes in the extent and timing of sea ice in the Bering Sea
+along with anomalous warming events could disrupt the niche partitioning
+between these seal species and, thus, challenge their resilience to climate
+change.
 
 ::: {.callout-warning}
 ## Under Development. Please do not cite or use
 
-Please note this analysis and manuscript is still in draft form and under active development. Changes to results, code, and the manuscript are likely and this should not be cited or used for any reason. We are sharing the work and development of this manuscript in the spirit of open science, improved transparency, and scientific reproducibility. 
+Please note this analysis and manuscript is still in draft form and under active
+development. Changes to results, code, and the manuscript are likely and this
+should not be cited or used for any reason. We are sharing the work and
+development of this manuscript in the spirit of open science, improved
+transparency, and scientific reproducibility.
 
-We plan to provide a preprint to bioRxiv once prior to journal submission.
+We plan to provide a preprint to bioRxiv prior to journal submission.
 :::
 
 # Introduction
 
+- review definition of niche partitioning;
+- review of previous studies (terrestrial/marine) of niche partitioning that
+relied on evidence from stable isotopes, geo-locations from bio-loggers, OR, for
+marine animals, dive behavior;
+- highlight any studies that used an integrated approach (e.g. stable isotopes
+and movement). any previous studies that integrated across all three?
+- review climate change impacts in the Arctic/Bering Sea and focus in on
+ribbon and spotted seals
+- previously published studies, observations, LTK(?), describing the ecology of
+ribbon and spotted seals that indicated potential for niche separation
+- study objectives: 
+  - Do stable isotope and bio-logging data from nearly 2 decades
+of research provide evidence for niche partitioning among ribbon and spotted 
+seals? 
+  - How might predicted climate change impacts in the Bering Sea affect this
+established partitioning of resources and will ribbon and spotted seals be
+resient to such change?
+
 # Methods
+
+## Stable Isotope Analysis
+
+
+```{r}
+si_data <- readRDS(here::here('data/si_data.rds'))
+
+min_year <- min(si_data$capture_dt) |> lubridate::year()
+max_year <- max(si_data$capture_dt) |> lubridate::year()
+
+n_ribbon_pup_si <- si_data |> 
+  dplyr::filter(common_name == 'Ribbon seal',
+                age_class %in% c('Pup')) |> 
+  dplyr::distinct(speno) |> nrow()
+
+n_spotted_pup_si <- si_data |> 
+  dplyr::filter(common_name == 'Spotted seal',
+                age_class %in% c('Pup')) |> 
+  dplyr::distinct(speno) |> nrow()
+
+n_ribbon_adult_si <- si_data |> 
+  dplyr::filter(common_name == 'Ribbon seal',
+                !age_class %in% c('Pup','Young of year')) |> 
+  dplyr::distinct(speno) |> nrow()
+
+n_spotted_adult_si <- si_data |> 
+  dplyr::filter(common_name == 'Spotted seal',
+                age_class %in% c('Pup','Young of year')) |> 
+  dplyr::distinct(speno) |> nrow()
+
+```
+
+Whiskers, hair, and blood (RBC and Plasma) from ribbon and spotted seals of all 
+age classes were collected in the field as part of larger research efforts 
+studying the ecology and health of ice-associated seals in the Bering Sea. All
+samples were collected from live seals captured in the spring (April-June)
+within the marginal ice zone at the southern edge of sea-ice extent.
+
+Stable isotope analysis was based on whiskers sampled from all age classes
+(dependent pup, young of the year, subadult, adult) between `r min_year` and 
+`r max_year`. For all age classes, samples were taken along the length of the
+whisker starting at the root. Samples further from the root represent the
+isotopic space further back in time. Stable isotopes from whiskers of dependent
+pups in the spring reflect the isotopic space of adult female diets in the winter
+(when the pup was developing in-utero) and sampling from the whisker base
+(segment 2) of adults in the spring corresponds with recent isotopic use (when those
+tissues were generated). Growth rates of whiskers in phocids are not linear and,
+thus, we can't attribute a specific segment of the whisker to a specific point
+in time -- except for the base segment near the root. Dependent pups, however,
+offer a unique opportunity because we know the majority of the whisker was
+developed in-utero and would represent the adult female's forgaing during the
+preceding fall/winter. Once the pup starts nursing, however, the trophic level
+changes and we can expect segments nearest the root to reflect this. For this
+analysis we only consider samples from the distant half of the whisker to most
+closely match the in-utero period. We simply averaged those samples.
+
+For comparison of the isotopic space, we used the R package, SIBER.
+
+
+```{r}
+pup_si_data <- si_data |> 
+  dplyr::filter(age_class %in% c('Pup'),
+         whisker_segment_num > 7) |> 
+  dplyr::summarise(value = mean(result_value),
+                   .by = c(speno,common_name,capture_dt,
+                           age_class,sex,result_type)) |> 
+  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
+  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
+  dplyr::mutate(community = 1) |> 
+  as.data.frame()
+
+
+pup_siber <- SIBER::createSiberObject(pup_si_data)
+
+
+group.ellipses.args  <- list(n = 100, p.interval = 0.95, 
+                             ci.mean = T, lty = 1, lwd = 2)
+group.hulls.args     <- list(lty = 2, col = "grey20")
+
+adult_si_data <- si_data |> 
+  dplyr::filter(!age_class %in% c('Pup','Young of year'),
+                whisker_segment_num == 3) |> 
+  # dplyr::filter(
+  #   dplyr::case_when(
+  #   result_type == 'D15N' ~ result_value > 0,
+  #   .default = TRUE
+  #     )
+  # ) |>
+  dplyr::summarise(value = mean(result_value),
+                   .by = c(speno,common_name,capture_dt,
+                           age_class,sex,result_type)) |> 
+  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
+  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
+  dplyr::mutate(community = 1) |> 
+  as.data.frame()
+
+adult_siber <- SIBER::createSiberObject(adult_si_data)
+
+group.ellipses.args  <- list(n = 100, p.interval = 0.95,
+                             ci.mean = T, lty = 1, lwd = 2)
+group.hulls.args     <- list(lty = 2, col = "grey20")
+
+```
+
 
 ```{r}
 locs_sf <- readRDS(here::here('data/locs_sf.rds')) |> 
@@ -111,6 +238,9 @@ N_spotted <- locs_sf |>
   dplyr::filter(species == 'Spotted seal') |> 
   dplyr::distinct(speno) |> nrow()
 ```
+
+
+## Utilization Distributions from Bio-logger Deployments
 
 A total of `r N_tags` bio-loggers (SPLASH family, Wildlife Computers, Redmond,
 Washington, USA) were deployed on `r N_ribbon` ribbon seals and `r N_spotted`
@@ -406,72 +536,18 @@ saveRDS(pl_pkde_open,here::here('data/pl_pkde_open.rds'))
 ```
 
 
-```{r}
-library(SIBER)
-
-si_data <- readRDS(here::here('data/si_data.rds'))
-```
-
-Stable isotope analysis was based on whiskers sampled from all age classes
-including dependent pups. For all age classes, samples were taken along the
-length of the whisker starting at the root. Samples further from the root
-represent the isotopic space further back in time. Stable isotopes from whiskers
-of dependent pups in the spring reflect the isotopic space of adult females in
-the winter (when the pup was developing in-utero) and sampling from the whisker
-base of adults in the spring corresponds with recent isotopic use (when those
-tissues were generated). Growth rates of whiskers in phocids are not linear
-and, thus, we can't attribute a specific segment of the whisker to a specific
-point in time -- except for the root segment. Dependent pups, however, offer a
-unique opportunity because we know the majority of the whisker was developed
-in-utero and would represent the adult female's forgaing during the preceding
-fall/winter. Once the pup starts nursing, however, the trophic level changes
-and we can expect segments nearest the root to reflect this. For this analysis
-we only consider samples from the distant half of the whisker to most closely
-match the in-utero period. We simply averaged those samples.
+## Dive Behavior From Bio-logger Deployments
 
 
-```{r}
-pup_si_data <- si_data |> 
-  dplyr::filter(age_class %in% c('Pup'),
-         whisker_segment_num > 7) |> 
-  dplyr::summarise(value = mean(result_value),
-                   .by = c(speno,common_name,capture_dt,
-                           age_class,sex,result_type)) |> 
-  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
-  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
-  dplyr::mutate(community = 1) |> 
-  as.data.frame()
+# Results
+
+## Stable Isotope
 
 
-pup_siber <- SIBER::createSiberObject(pup_si_data)
+(n = `r n_ribbon_pup_si` ribbon; n = `r n_spotted_pup_si` spotted)
 
+(n = `r n_ribbon_adult_si` ribbon; n = `r n_spotted_adult_si` spotted)
 
-group.ellipses.args  <- list(n = 100, p.interval = 0.95, 
-                             ci.mean = T, lty = 1, lwd = 2)
-group.hulls.args     <- list(lty = 2, col = "grey20")
-
-adult_si_data <- si_data |> 
-  dplyr::filter(!age_class %in% c('Pup','Young of year'),
-                whisker_segment_num == 1) |> 
-  dplyr::summarise(value = mean(result_value),
-                   .by = c(speno,common_name,capture_dt,
-                           age_class,sex,result_type)) |> 
-  tidyr::pivot_wider(names_from = result_type, values_from = value) |> 
-  dplyr::select(iso1 = D13C,iso2 = D15N,group = common_name) |>
-  dplyr::mutate(community = 1) |> 
-  as.data.frame()
-
-adult_siber <- SIBER::createSiberObject(adult_si_data)
-
-group.ellipses.args  <- list(n = 100, p.interval = 0.95,
-                             ci.mean = T, lty = 1, lwd = 2)
-group.hulls.args     <- list(lty = 2, col = "grey20")
-
-```
-
-For comparison of the isotopic space, we used the R package, SIBER.
-
-## Results
 
 The figures below show results from the initial stable isotope analysis for
 pups sampled to represent adult female fall/winter foraging (figure 1) and for 
@@ -505,6 +581,7 @@ legend("topright",colnames(groupMetricsML(adult_siber)),
 #| include: true
 #| fig-cap: Isotopic space of ribbon and spotted seal adults and sub-adults
 #|   sampled from the root of the whisker sampled in the spring
+
 par(mfrow=c(1,1))
 plotSiberObject(adult_siber,
                 ax.pad = 1.5,

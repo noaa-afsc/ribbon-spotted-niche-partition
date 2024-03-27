@@ -3,11 +3,18 @@ project:
 
 execute:
   freeze: auto
+  include: false
+  
+code-links:
+    - repo: noaa-afsc/ribbon-spotted-niche-partition
 
 format:
-  html:
+  html: 
+    theme: 
+      - cosmo
+      - custom.scss
+    mainfont: "STIX Two Text"
+    fontsize: 1.1em
+    linestretch: 1.7
     toc: true
-    comments:
-      hypothesis: true
   docx: default
-  typst: default
