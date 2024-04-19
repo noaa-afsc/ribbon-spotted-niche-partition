@@ -23,10 +23,7 @@ spenos_db <- tbl(con, in_schema("capture","for_telem"))  |>  collect()
 
 locs_qry <- "SELECT deployid, ptt, type, error_radius, error_semi_major_axis,
               error_semi_minor_axis, error_ellipse_orientation, locs_dt, quality, geom as geometry
-              FROM telem.geo_wc_locs_qa WHERE qa_status != 'tag_actively_transmitting'
-              AND deployid NOT IN ('PL2016_9001_15U2968','PL2016_9002_15U2975',
-              'PL2016_9003_15U2869','PL2017_9002_16U2115','PL2017_9003_15U2972',
-              'PL2018_1022_17U2916');"
+              FROM telem.geo_wc_locs_qa WHERE qa_status != 'tag_actively_transmitting';"
 
 locs_sf <- read_sf(con, query = locs_qry)  |> 
   left_join(deployments_db, by = 'deployid')  |> 

@@ -1,0 +1,1265 @@
+---
+references:
+- id: hindell2012
+  author:
+  - family: Hindell
+    given: Mark A.
+  - family: Lydersen
+    given: Christian
+  - family: Hop
+    given: Haakon
+  - family: Kovacs
+    given: Kit M.
+  container-title: PLoS ONE
+  container-title-short: PLoS ONE
+  DOI: 10.1371/journal.pone.0038307
+  editor:
+  - family: Fahlman
+    given: Andreas
+  is-referenced-by-count: 25
+  ISSN: 1932-6203
+  issue: 5
+  issued: 2012-05-31
+  language: en
+  member: 340
+  page: e38307
+  prefix: 10.1371
+  providerKey: doi
+  publisher: Public Library of Science (PLoS)
+  reference-count: 59
+  references-count: 59
+  score: 1
+  source: Crossref
+  subject: Multidisciplinary
+  title: Pre-Partum Diet of Adult Female Bearded Seals in Years of
+    Contrasting Ice Conditions
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1371/journal.pone.corrections_policy"
+  URL: "http://dx.doi.org/10.1371/journal.pone.0038307"
+  volume: 7
+- id: velázquez-castillo2017
+  article-number: 168
+  author:
+  - family: Velázquez-Castillo
+    given: Miriam A.
+  - family: Elorriaga-Verplancken
+    given: Fernando R.
+  container-title: Marine Biology
+  container-title-short: Mar Biol
+  DOI: 10.1007/s00227-017-3192-z
+  is-referenced-by-count: 3
+  ISSN: 0025-3162
+  issue: 8
+  issued: 2017-07-24
+  language: en
+  member: 297
+  prefix: 10.1007
+  providerKey: doi
+  publisher: Springer Science and Business Media LLC
+  reference-count: 53
+  references-count: 53
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Isotopic evidence for intersexual foraging variation in
+    northern elephant seals from Baja California, Mexico
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  URL: "http://dx.doi.org/10.1007/s00227-017-3192-z"
+  volume: 164
+- id: urquía2019
+  author:
+  - family: Urquía
+    given: Diego O.
+  - family: Páez-Rosas
+    given: Diego
+  container-title: Mammalian Biology
+  container-title-short: Mammalian Biology
+  DOI: 10.1016/j.mambio.2019.03.012
+  is-referenced-by-count: 9
+  ISSN: 1616-5047
+  issued: 2019-05
+  language: en
+  member: 297
+  page: 28-36
+  prefix: 10.1007
+  providerKey: doi
+  publisher: Springer Science and Business Media LLC
+  reference-count: 67
+  references-count: 67
+  score: 1
+  source: Crossref
+  subject: Animal Science and Zoology
+  title: δ13C and δ15N values in pup whiskers as a proxy for the trophic
+    behavior of Galapagos sea lion females
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1016/elsevier_cm_policy"
+  URL: "http://dx.doi.org/10.1016/j.mambio.2019.03.012"
+  volume: 96
+- id: jones2020
+  article-number: 148
+  author:
+  - family: Jones
+    given: Kayleigh A.
+  - family: Baylis
+    given: Alastair. M. M.
+  - family: Orben
+    given: Rachael A.
+  - family: Ratcliffe
+    given: Norman
+  - family: Votier
+    given: Stephen C.
+  - family: Newton
+    given: Jason
+  - family: Staniland
+    given: Iain J.
+  container-title: Marine Biology
+  container-title-short: Mar Biol
+  DOI: 10.1007/s00227-020-03760-4
+  is-referenced-by-count: 5
+  ISSN: 0025-3162
+  issue: 10
+  issued: 2020-09-29
+  language: en
+  member: 297
+  prefix: 10.1007
+  providerKey: doi
+  publisher: Springer Science and Business Media LLC
+  reference-count: 88
+  references-count: 88
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Stable Isotope Values in South American Fur Seal Pup Whiskers
+    as Proxies of Year-round Maternal Foraging Ecology
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  URL: "http://dx.doi.org/10.1007/s00227-020-03760-4"
+  volume: 167
+- id: beltran2015
+  author:
+  - family: Beltran
+    given: RS
+  - family: Connolly Sadou
+    given: M
+  - family: Condit
+    given: R
+  - family: Peterson
+    given: S
+  - family: Reichmuth
+    given: C
+  - family: Costa
+    given: DP
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps11176
+  is-referenced-by-count: 35
+  ISSN: 0171-8630
+  issued: 2015-03-16
+  language: en
+  member: 1913
+  page: 243-253
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 49
+  references-count: 49
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Fine-scale whisker growth measurements can reveal temporal
+    foraging patterns from stable isotope signatures
+  type: article-journal
+  URL: "http://dx.doi.org/10.3354/meps11176"
+  volume: 523
+- id: mchuron2020
+  author:
+  - family: McHuron
+    given: EA
+  - family: Williams
+    given: T
+  - family: Costa
+    given: DP
+  - family: Reichmuth
+    given: C
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps13204
+  is-referenced-by-count: 7
+  ISSN: 0171-8630
+  issued: 2020-01-23
+  language: en
+  member: 1913
+  page: 231-236
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 17
+  references-count: 17
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Contrasting whisker growth dynamics within the phocid lineage
+  type: article-journal
+  URL: "http://dx.doi.org/10.3354/meps13204"
+  volume: 634
+- id: mchuron2016
+  author:
+  - family: McHuron
+    given: EA
+  - family: Walcott
+    given: SM
+  - family: Zeligs
+    given: J
+  - family: Skrovan
+    given: S
+  - family: Costa
+    given: DP
+  - family: Reichmuth
+    given: C
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps11793
+  is-referenced-by-count: 39
+  ISSN: 0171-8630
+  issued: 2016-07-28
+  language: en
+  member: 1913
+  page: 213-224
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 42
+  references-count: 42
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: "Whisker growth dynamics in two North Pacific pinnipeds:
+    implications for determining foraging ecology from stable isotope
+    analysis"
+  type: article-journal
+  URL: "http://dx.doi.org/10.3354/meps11793"
+  volume: 554
+- id: beltran2016
+  author:
+  - family: Beltran
+    given: Roxanne S.
+  - family: Peterson
+    given: Sarah H.
+  - family: McHuron
+    given: Elizabeth A.
+  - family: Reichmuth
+    given: Colleen
+  - family: Hückstädt
+    given: Luis A.
+  - family: Costa
+    given: Daniel P.
+  container-title: Rapid Communications in Mass Spectrometry
+  container-title-short: Rapid Commun. Mass Spectrom.
+  DOI: 10.1002/rcm.7539
+  is-referenced-by-count: 22
+  ISSN: 0951-4198
+  issue: 9
+  issued: 2016-04-05
+  language: en
+  member: 311
+  page: 1115-1122
+  prefix: 10.1002
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 41
+  references-count: 41
+  score: 1
+  source: Crossref
+  subject: Organic Chemistry
+  subtitle: Trophic discrimination factors for pinnipeds
+  title: Seals and sea lions are what they eat, plus what? Determination
+    of trophic discrimination factors for seven pinniped species
+  type: article-journal
+  URL: "http://dx.doi.org/10.1002/rcm.7539"
+  volume: 30
+- id: lübcker2016
+  author:
+  - family: Lübcker
+    given: "N"
+  - family: Condit
+    given: R
+  - family: Beltran
+    given: RS
+  - family: Bruyn
+    given: PJN
+    non-dropping-particle: de
+  - family: Bester
+    given: MN
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps11899
+  is-referenced-by-count: 23
+  ISSN: 0171-8630
+  issued: 2016-11-09
+  language: en
+  member: 1913
+  page: 243-255
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 43
+  references-count: 43
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: "Vibrissal growth parameters of southern elephant seals
+    Mirounga leonina: obtaining fine-scale, time‑based stable isotope
+    data"
+  type: article-journal
+  URL: "http://dx.doi.org/10.3354/meps11899"
+  volume: 559
+- id: alston2022
+  author:
+  - family: Alston
+    given: Jesse M.
+  - family: Fleming
+    given: Christen H.
+  - family: Kays
+    given: Roland
+  - family: Streicher
+    given: Jarryd P.
+  - family: Downs
+    given: Colleen T.
+  - family: Ramesh
+    given: Tharmalingam
+  - family: Reineking
+    given: Björn
+  - family: Calabrese
+    given: Justin M.
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210x.14025
+  is-referenced-by-count: 5
+  ISSN: 2041-210X
+  issue: 2
+  issued: 2022-11-20
+  language: en
+  member: 311
+  page: 643-654
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 80
+  references-count: 80
+  score: 1
+  source: Crossref
+  subject: Ecological Modeling
+  title: Mitigating pseudoreplication and bias in resource selection
+    functions with autocorrelation‐informed weighting
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/2041-210X.14025"
+  volume: 14
+- id: fleming2022
+  author:
+  - family: Fleming
+    given: Christen H.
+  - family: Deznabi
+    given: Iman
+  - family: Alavi
+    given: Shauhin
+  - family: Crofoot
+    given: Margaret C.
+  - family: Hirsch
+    given: Ben T.
+  - family: Medici
+    given: E. Patricia
+  - family: Noonan
+    given: Michael J.
+  - family: Kays
+    given: Roland
+  - family: Fagan
+    given: William F.
+  - family: Sheldon
+    given: Daniel
+  - family: Calabrese
+    given: Justin M.
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210x.13815
+  is-referenced-by-count: 8
+  ISSN: 2041-210X
+  issue: 5
+  issued: 2022-03-11
+  language: en
+  member: 311
+  page: 1027-1041
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 76
+  references-count: 76
+  score: 1
+  source: Crossref
+  subject: Ecological Modeling
+  title: Population‐level inference for home‐range areas
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/2041-210X.13815"
+  volume: 13
+- id: silva2021
+  author:
+  - family: Silva
+    given: Inês
+  - family: Fleming
+    given: Christen H.
+  - family: Noonan
+    given: Michael J.
+  - family: Alston
+    given: Jesse
+  - family: Folta
+    given: Cody
+  - family: Fagan
+    given: William F.
+  - family: Calabrese
+    given: Justin M.
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210x.13786
+  is-referenced-by-count: 39
+  ISSN: 2041-210X
+  issue: 3
+  issued: 2021-12-27
+  language: en
+  member: 311
+  page: 534-544
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 64
+  references-count: 64
+  score: 1
+  source: Crossref
+  subject: Ecological Modeling
+  title: "Autocorrelation‐informed home range estimation: A review and
+    practical guide"
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/2041-210X.13786"
+  volume: 13
+- id: fleming2019
+  author:
+  - family: Fleming
+    given: Christen H.
+  - family: Noonan
+    given: Michael J.
+  - family: Medici
+    given: Emilia Patricia
+  - family: Calabrese
+    given: Justin M.
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210x.13270
+  editor:
+  - family: Matthiopoulos
+    given: Jason
+  is-referenced-by-count: 45
+  ISSN: 2041-210X
+  issue: 10
+  issued: 2019-08-11
+  language: en
+  member: 311
+  page: 1679-1689
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 47
+  references-count: 47
+  score: 1
+  source: Crossref
+  subject: Ecological Modeling
+  title: Overcoming the challenge of small effective sample sizes in
+    home‐range estimation
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/2041-210X.13270"
+  volume: 10
+- id: winner2018
+  author:
+  - family: Winner
+    given: Kevin
+  - family: Noonan
+    given: Michael J.
+  - family: Fleming
+    given: Christen H.
+  - family: Olson
+    given: Kirk A.
+  - family: Mueller
+    given: Thomas
+  - family: Sheldon
+    given: Daniel
+  - family: Calabrese
+    given: Justin M.
+  container-title: Methods in Ecology and Evolution
+  container-title-short: Methods Ecol Evol
+  DOI: 10.1111/2041-210x.13027
+  editor:
+  - family: Scales
+    given: Kylie
+  is-referenced-by-count: 64
+  ISSN: 2041-210X
+  issue: 7
+  issued: 2018-06-08
+  language: en
+  member: 311
+  page: 1679-1691
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 47
+  references-count: 47
+  score: 1
+  source: Crossref
+  subject: Ecological Modeling
+  title: Statistical inference for home range overlap
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/2041-210X.13027"
+  volume: 9
+- id: wang2016
+  author:
+  - family: Wang
+    given: Shiway W.
+  - family: Springer
+    given: Alan M.
+  - family: Budge
+    given: Suzanne M.
+  - family: Horstmann
+    given: Lara
+  - family: Quakenbush
+    given: Lori T.
+  - family: Wooller
+    given: Matthew J.
+  container-title: Ecological Applications
+  container-title-short: Ecological Applications
+  DOI: 10.1890/14-2421
+  editor:
+  - family: Jensen
+    given: O.
+  is-referenced-by-count: 25
+  ISSN: 1051-0761
+  issue: 3
+  issued: 2016-04
+  language: en
+  member: 311
+  page: 830-845
+  prefix: 10.1002
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 97
+  references-count: 97
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Carbon sources and trophic relationships of ice seals during
+    recent environmental shifts in the Bering Sea
+  type: article-journal
+  URL: "http://dx.doi.org/10.1890/14-2421"
+  volume: 26
+- id: oxtoby2017
+  author:
+  - family: Oxtoby
+    given: L. E.
+  - family: Horstmann
+    given: L.
+  - family: Budge
+    given: S. M.
+  - family: O'Brien
+    given: D. M.
+  - family: Wang
+    given: S. W.
+  - family: Schollmeier
+    given: T.
+  - family: Wooller
+    given: M. J.
+  container-title: Oecologia
+  container-title-short: Oecologia
+  DOI: 10.1007/s00442-017-3883-7
+  is-referenced-by-count: 9
+  ISSN: 0029-8549
+  issue: 2
+  issued: 2017-05-26
+  language: en
+  member: 297
+  page: 385-398
+  prefix: 10.1007
+  providerKey: doi
+  publisher: Springer Science and Business Media LLC
+  reference-count: 93
+  references-count: 93
+  score: 1
+  source: Crossref
+  subject: Ecology, Evolution, Behavior and Systematics
+  title: Resource partitioning between Pacific walruses and bearded
+    seals in the Alaska Arctic and sub-Arctic
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  URL: "http://dx.doi.org/10.1007/s00442-017-3883-7"
+  volume: 184
+- id: kunisch2021
+  author:
+  - family: Kunisch
+    given: EH
+  - family: Graeve
+    given: M
+  - family: Gradinger
+    given: R
+  - family: Haug
+    given: T
+  - family: Kovacs
+    given: KM
+  - family: Lydersen
+    given: C
+  - family: Varpe
+    given: Ø
+  - family: Bluhm
+    given: BA
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps13834
+  is-referenced-by-count: 11
+  ISSN: 0171-8630
+  issued: 2021-09-30
+  language: en
+  member: 1913
+  page: 181-197
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 118
+  references-count: 118
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: "Ice-algal carbon supports harp and ringed seal diets in the
+    European Arctic: evidence from fatty acid and stable isotope
+    markers"
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.3354/policy"
+  URL: "http://dx.doi.org/10.3354/meps13834"
+  volume: 675
+- id: land-miller2024
+  author:
+  - family: Land-Miller
+    given: H
+  - family: Roos
+    given: AM
+  - family: Simon
+    given: M
+  - family: Dietz
+    given: R
+  - family: Sonne
+    given: C
+  - family: Pedro
+    given: S
+  - family: Rosing-Asvid
+    given: A
+  - family: Rigét
+    given: FF
+  - family: McKinney
+    given: MA
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps14440
+  is-referenced-by-count: 2
+  ISSN: 0171-8630
+  issued: 2024-02-08
+  language: en
+  member: 1913
+  page: 163-182
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 121
+  references-count: 121
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Comparison of feeding niches between Arctic and
+    northward-moving sub-Arctic marine mammals in Greenland
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.3354/policy"
+  URL: "http://dx.doi.org/10.3354/meps14440"
+  volume: 728
+- id: carlyle2022
+  article-number: 109746
+  author:
+  - family: Carlyle
+    given: Cody G.
+  - family: Roth
+    given: James D.
+  - family: Yurkowski
+    given: David J.
+  - family: Kohlbach
+    given: Doreen
+  - family: Young
+    given: Brent G.
+  - family: Brown
+    given: Thomas A.
+  - family: Riget
+    given: Frank F.
+  - family: Dietz
+    given: Rune
+  - family: Ferguson
+    given: Steven H.
+  container-title: Ecological Indicators
+  container-title-short: Ecological Indicators
+  DOI: 10.1016/j.ecolind.2022.109746
+  is-referenced-by-count: 0
+  ISSN: 1470-160X
+  issued: 2022-12
+  language: en
+  member: 78
+  page: 109746
+  prefix: 10.1016
+  providerKey: doi
+  publisher: Elsevier BV
+  reference-count: 88
+  references-count: 88
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Spatial variation in carbon source use and trophic position of
+    ringed seals across a latitudinal gradient of sea ice
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1016/elsevier_cm_policy"
+  URL: "http://dx.doi.org/10.1016/j.ecolind.2022.109746"
+  volume: 145
+- id: desforges2022
+  author:
+  - family: Desforges
+    given: Jean-Pierre
+  - family: Kohlbach
+    given: Doreen
+  - family: Carlyle
+    given: Cody G.
+  - family: Michel
+    given: Christine
+  - family: Loseto
+    given: Lisa L.
+  - family: Rosenberg
+    given: Bruno
+  - family: Yurkowski
+    given: David J.
+  - family: Ferguson
+    given: Steven H.
+  container-title: Frontiers in Marine Science
+  container-title-short: Front. Mar. Sci.
+  DOI: 10.3389/fmars.2022.969327
+  is-referenced-by-count: 1
+  ISSN: 2296-7745
+  issued: 2022-10-07
+  member: 1965
+  prefix: 10.3389
+  providerKey: doi
+  publisher: Frontiers Media SA
+  reference-count: 67
+  references-count: 67
+  score: 1
+  source: Crossref
+  subject: Ocean Engineering
+  title: Multi-dietary tracer approach reveals little overlap in
+    foraging ecology between seasonally sympatric ringed and harp seals
+    in the high Arctic
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.3389/crossmark-policy"
+  URL: "http://dx.doi.org/10.3389/fmars.2022.969327"
+  volume: 9
+- id: botta2018
+  author:
+  - family: Botta
+    given: Silvina
+  - family: Secchi
+    given: Eduardo R.
+  - family: Rogers
+    given: Tracey L.
+  - family: Prado
+    given: Jonatas H.F.
+  - family: Lima
+    given: Renan C.
+    non-dropping-particle: de
+  - family: Carlini
+    given: Pedro
+  - family: Negrete
+    given: Javier
+  container-title: "Deep Sea Research Part II: Topical Studies in
+    Oceanography"
+  container-title-short: "Deep Sea Research Part II: Topical Studies in
+    Oceanography"
+  DOI: 10.1016/j.dsr2.2017.11.005
+  is-referenced-by-count: 26
+  ISSN: 0967-0645
+  issued: 2018-03
+  language: en
+  member: 78
+  page: 240-249
+  prefix: 10.1016
+  providerKey: doi
+  publisher: Elsevier BV
+  reference-count: 100
+  references-count: 100
+  score: 1
+  source: Crossref
+  subject: Oceanography
+  title: Isotopic niche overlap and partition among three Antarctic
+    seals from the Western Antarctic Peninsula
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1016/elsevier_cm_policy"
+  URL: "http://dx.doi.org/10.1016/j.dsr2.2017.11.005"
+  volume: 149
+- id: lübcker2020
+  author:
+  - family: Lübcker
+    given: Nico
+  - family: Whiteman
+    given: John P
+  - family: Newsome
+    given: Seth D
+  - family: Millar
+    given: Robert P
+  - family: Bruyn
+    given: P J Nico
+    non-dropping-particle: de
+  container-title: Conservation Physiology
+  DOI: 10.1093/conphys/coaa060
+  editor:
+  - family: Cooke
+    given: Steven
+  is-referenced-by-count: 10
+  ISSN: 2051-1434
+  issue: 1
+  issued: 2020-01-01
+  language: en
+  member: 286
+  prefix: 10.1093
+  providerKey: doi
+  publisher: Oxford University Press (OUP)
+  reference-count: 85
+  references-count: 85
+  score: 1
+  source: Crossref
+  subject: Management, Monitoring, Policy and Law
+  title: Can the carbon and nitrogen isotope values of offspring be used
+    as a proxy for their mother's diet? Using foetal physiology to
+    interpret bulk tissue and amino acid δ15N values
+  type: article-journal
+  URL: "http://dx.doi.org/10.1093/conphys/coaa060"
+  volume: 8
+- id: karpovich2022
+  author:
+  - family: Karpovich
+    given: Shawna A.
+  - family: Skinner
+    given: John P.
+  - family: Miller
+    given: Carlene N.
+  - family: Polasek
+    given: Lori K.
+  - family: Pendleton
+    given: Grey W.
+  container-title: Canadian Journal of Zoology
+  container-title-short: Can. J. Zool.
+  DOI: 10.1139/cjz-2021-0205
+  is-referenced-by-count: 0
+  ISSN: 0008-4301
+  issue: 11
+  issued: 2022-11-01
+  language: en
+  member: 155
+  page: 687-699
+  prefix: 10.1139
+  providerKey: doi
+  publisher: Canadian Science Publishing
+  reference-count: 41
+  references-count: 41
+  score: 1
+  source: Crossref
+  subject: Animal Science and Zoology
+  title: Growth and shedding of harbor seal (*Phoca vitulina*) whiskers
+  type: article-journal
+  URL: "http://dx.doi.org/10.1139/cjz-2021-0205"
+  volume: 100
+- id: beltran2024
+  author:
+  - family: Beltran
+    given: Roxanne
+  - family: Kilpatrick
+    given: A. Marm
+  - family: Picardi
+    given: Simona
+  - family: Abrahms
+    given: Briana
+  - family: Barrile
+    given: Gabriel
+  - family: Oestreich
+    given: William
+  - family: Smith
+    given: Justine
+  - family: Czapanskiy
+    given: Max
+  - family: Favilla
+    given: Arina
+  - family: Reisinger
+    given: Ryan
+  - family: Kendall-Bar
+    given: Jessica
+  - family: Payne
+    given: Allison
+  - family: Savoca
+    given: Matthew
+  - family: Palance
+    given: Danial
+  - family: Andrzejaczek
+    given: Samantha
+  - family: Shen
+    given: Daphne
+  - family: Adachi
+    given: Taiki
+  - family: Costa
+    given: Daniel
+  - family: Storm
+    given: Natalie
+  - family: Hale
+    given: Conner
+  - family: Robinson
+    given: Patrick
+  DOI: 10.32942/x2tk66
+  group-title: Ecology and Evolutionary Biology
+  is-referenced-by-count: 0
+  issued: 2024-02-25
+  member: 29705
+  prefix: 10.32942
+  providerKey: doi
+  publisher: California Digital Library (CDL)
+  reference-count: 0
+  references-count: 0
+  score: 1
+  source: Crossref
+  subtype: preprint
+  title: "Biologging for the future: how biologgers can help solve
+    fundamental questions, from individuals to ecosystems"
+  type: webpage
+  URL: "http://dx.doi.org/10.32942/X2TK66"
+- id: petalas2021
+  article-number: 2493
+  author:
+  - family: Petalas
+    given: Christina
+  - family: Lazarus
+    given: Thomas
+  - family: Lavoie
+    given: Raphael A.
+  - family: Elliott
+    given: Kyle H.
+  - family: Guigueno
+    given: Mélanie F.
+  container-title: Scientific Reports
+  container-title-short: Sci Rep
+  DOI: 10.1038/s41598-021-81583-z
+  is-referenced-by-count: 14
+  ISSN: 2045-2322
+  issue: 1
+  issued: 2021-01-28
+  language: en
+  member: 297
+  prefix: 10.1038
+  providerKey: doi
+  publisher: Springer Science and Business Media LLC
+  reference-count: 90
+  references-count: 90
+  score: 1
+  source: Crossref
+  subject: Multidisciplinary
+  title: Foraging niche partitioning in sympatric seabird populations
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  URL: "http://dx.doi.org/10.1038/s41598-021-81583-z"
+  volume: 11
+- id: raby2019
+  author:
+  - family: Raby
+    given: Graham D.
+  - family: Johnson
+    given: Timothy B.
+  - family: Kessel
+    given: Steven T.
+  - family: Stewart
+    given: Thomas J.
+  - family: Fisk
+    given: Aaron T.
+  container-title: Journal of Applied Ecology
+  container-title-short: Journal of Applied Ecology
+  DOI: 10.1111/1365-2664.13522
+  editor:
+  - family: Januchowski‐Hartley
+    given: Stephanie
+  is-referenced-by-count: 23
+  ISSN: 0021-8901
+  issue: 1
+  issued: 2019-10-29
+  language: en
+  member: 311
+  page: 181-191
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 43
+  references-count: 43
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: Pop‐off data storage tags reveal niche partitioning between
+    native and non‐native predators in a novel ecosystem
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/1365-2664.13522"
+  volume: 57
+- id: cleary2016
+  author:
+  - family: Cleary
+    given: Alison C.
+  - family: Durbin
+    given: Edward G.
+  - family: Rynearson
+    given: Tatiana A.
+  - family: Bailey
+    given: Jennifer
+  container-title: "Deep Sea Research Part II: Topical Studies in
+    Oceanography"
+  container-title-short: "Deep Sea Research Part II: Topical Studies in
+    Oceanography"
+  DOI: 10.1016/j.dsr2.2015.04.001
+  is-referenced-by-count: 33
+  ISSN: 0967-0645
+  issued: 2016-12
+  language: en
+  member: 78
+  page: 181-189
+  prefix: 10.1016
+  providerKey: doi
+  publisher: Elsevier BV
+  reference-count: 61
+  references-count: 61
+  score: 1
+  source: Crossref
+  subject: Oceanography
+  title: "Feeding by Pseudocalanus copepods in the Bering Sea: Trophic
+    linkages and a potential mechanism of niche partitioning"
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1016/elsevier_cm_policy"
+  URL: "http://dx.doi.org/10.1016/j.dsr2.2015.04.001"
+  volume: 134
+- id: costa-pereira2022
+  author:
+  - family: Costa‐Pereira
+    given: Raul
+  - family: Moll
+    given: Remington J.
+  - family: Jesmer
+    given: Brett R.
+  - family: Jetz
+    given: Walter
+  container-title: Journal of Animal Ecology
+  container-title-short: Journal of Animal Ecology
+  DOI: 10.1111/1365-2656.13698
+  is-referenced-by-count: 24
+  ISSN: 0021-8790
+  issue: 7
+  issued: 2022-04-18
+  language: en
+  member: 311
+  page: 1334-1344
+  prefix: 10.1111
+  providerKey: doi
+  publisher: Wiley
+  reference-count: 104
+  references-count: 104
+  score: 1
+  source: Crossref
+  subject: Animal Science and Zoology
+  title: "Animal tracking moves community ecology: Opportunities and
+    challenges"
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1002/crossmark_policy"
+  URL: "http://dx.doi.org/10.1111/1365-2656.13698"
+  volume: 91
+- id: will2018
+  author:
+  - family: Will
+    given: AP
+  - family: Kitaysky
+    given: AS
+  container-title: Marine Ecology Progress Series
+  container-title-short: Mar. Ecol. Prog. Ser.
+  DOI: 10.3354/meps12471
+  is-referenced-by-count: 13
+  ISSN: 0171-8630
+  issued: 2018-04-12
+  language: en
+  member: 1913
+  page: 247-260
+  prefix: 10.3354
+  providerKey: doi
+  publisher: Inter-Research Science Center
+  reference-count: 83
+  references-count: 83
+  score: 1
+  source: Crossref
+  subject: Ecology
+  title: "Variability in trophic level and habitat use in response to
+    environmental forcing: isotopic niche dynamics of breeding seabirds
+    in the southeastern Bering Sea"
+  type: article-journal
+  URL: "http://dx.doi.org/10.3354/meps12471"
+  volume: 593
+- id: grebmeier2006
+  author:
+  - family: Grebmeier
+    given: Jacqueline M.
+  - family: Overland
+    given: James E.
+  - family: Moore
+    given: Sue E.
+  - family: Farley
+    given: Ed V.
+  - family: Carmack
+    given: Eddy C.
+  - family: Cooper
+    given: Lee W.
+  - family: Frey
+    given: Karen E.
+  - family: Helle
+    given: John H.
+  - family: McLaughlin
+    given: Fiona A.
+  - family: McNutt
+    given: S. Lyn
+  container-title: Science
+  container-title-short: Science
+  DOI: 10.1126/science.1121365
+  is-referenced-by-count: 658
+  ISSN: 0036-8075
+  issue: 5766
+  issued: 2006-03-10
+  language: en
+  member: 221
+  page: 1461-1464
+  prefix: 10.1126
+  providerKey: doi
+  publisher: American Association for the Advancement of Science (AAAS)
+  reference-count: 35
+  references-count: 35
+  score: 1
+  source: Crossref
+  subject: Multidisciplinary
+  title: A Major Ecosystem Shift in the Northern Bering Sea
+  type: article-journal
+  URL: "http://dx.doi.org/10.1126/science.1121365"
+  volume: 311
+- id: stafford2022
+  author:
+  - family: Stafford
+    given: Kathleen
+  - 
+  - family: Farley
+    given: Edward
+  - family: Ferguson
+    given: Megan
+  - family: Kuletz
+    given: Kathy
+  - family: Levine
+    given: Robert
+  container-title: Oceanography
+  container-title-short: Oceanog
+  DOI: 10.5670/oceanog.2022.101
+  is-referenced-by-count: 11
+  ISSN: 1042-8275
+  issue: 1
+  issued: 2022-03-01
+  member: 3658
+  prefix: 10.5670
+  providerKey: crossref
+  publisher: The Oceanography Society
+  reference-count: 0
+  references-count: 0
+  score: 1
+  source: Crossref
+  subject: Oceanography
+  title: Northward Range Expansion of Subarctic Upper Trophic Level
+    Animals into the Pacific Arctic Region
+  type: article-journal
+  URL: "http://dx.doi.org/10.5670/oceanog.2022.101"
+  volume: 35
+- id: huntington2020
+  author:
+  - family: Huntington
+    given: Henry P.
+  - family: Danielson
+    given: Seth L.
+  - family: Wiese
+    given: Francis K.
+  - family: Baker
+    given: Matthew
+  - family: Boveng
+    given: Peter
+  - family: Citta
+    given: John J.
+  - family: De Robertis
+    given: Alex
+  - family: Dickson
+    given: Danielle M. S.
+  - family: Farley
+    given: Ed
+  - family: George
+    given: J. Craighead
+  - family: Iken
+    given: Katrin
+  - family: Kimmel
+    given: David G.
+  - family: Kuletz
+    given: Kathy
+  - family: Ladd
+    given: Carol
+  - family: Levine
+    given: Robert
+  - family: Quakenbush
+    given: Lori
+  - family: Stabeno
+    given: Phyllis
+  - family: Stafford
+    given: Kathleen M.
+  - family: Stockwell
+    given: Dean
+  - family: Wilson
+    given: Chris
+  container-title: Nature Climate Change
+  container-title-short: Nat. Clim. Chang.
+  DOI: 10.1038/s41558-020-0695-2
+  is-referenced-by-count: 175
+  ISSN: 1758-678X
+  issue: 4
+  issued: 2020-02-24
+  language: en
+  member: 297
+  page: 342-348
+  prefix: 10.1038
+  providerKey: crossref
+  publisher: Springer Science and Business Media LLC
+  reference-count: 51
+  references-count: 51
+  score: 1
+  source: Crossref
+  subject: Social Sciences (miscellaneous)
+  title: Evidence suggests potential transformation of the Pacific
+    Arctic ecosystem is underway
+  type: article-journal
+  update-policy: "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  URL: "http://dx.doi.org/10.1038/s41558-020-0695-2"
+  volume: 10
+...

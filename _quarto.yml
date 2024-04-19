@@ -16,6 +16,11 @@ format:
     fontsize: 1.1em
     linestretch: 1.5
     toc: true
-  docx: default
-  agu-pdf:
-    keep-tex: true
+  # docx: default
+  # typst: default
+  # agu-pdf:
+  #   linestretch: 1.25
+  #   keep-tex: true
+  #   include-in-header: 
+  #     text: |
+  #       \journalname{bioRxiv}
